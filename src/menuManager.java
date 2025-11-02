@@ -104,7 +104,8 @@ public class menuManager {
                     [8]  Search Item by Keyword
                     -----------------------------------------------------
                     [9]  View Staff Requests
-                    [10] Logout
+                    [10] Process Request
+                    [11] Logout
                     [0]  Exit
                     =====================================================
                     """);
@@ -166,11 +167,12 @@ public class menuManager {
                 case 9 -> {
                     // view request
                     requestManager.viewRequest();
+                }
+                case 10 -> {
                     // object declaration of admin for the decision of an admin into a one request.
                     Admin admin = new Admin();
-
                     // process method for the admin.
-                    requestManager.processRequest(admin);
+                    requestManager.processRequest(admin, manager);
 
 
                     System.out.println("Returning to ADMIN MENU");
@@ -185,7 +187,7 @@ public class menuManager {
 
                 }
 
-                case 10 -> {
+                case 11 -> {
                     System.out.println("Logging out");
                     for (int i = 0; i < 5; i++) {
                         try {
@@ -254,12 +256,8 @@ public class menuManager {
                         return;
                     }
                         // if not it bypasses the if statement and go direct into the userInput
-                    System.out.println("Enter Item name to edit");
-                    String itemName = sc.nextLine();
-
-                    System.out.println("Enter current price of the item");
-                    double currentPrice = sc.nextInt();
-                    sc.nextLine();
+                    System.out.println("Enter Item ID to edit");
+                    int itemId = sc.nextInt();
 
                     System.out.println("Enter the new PRICE of the ITEM");
                     double proposedPrice = sc.nextInt();
@@ -268,7 +266,7 @@ public class menuManager {
                     System.out.println("Enter the reason of Change");
                     String reason = sc.nextLine();
 
-                    Request request = new Request(itemName, currentPrice, proposedPrice, reason);
+                    Request request = new Request(itemId, proposedPrice, reason);
                     staffRequestManager.submitRequest(request);
                     System.out.println("Submitting request");
                     for (int i = 0; i < 4; i++) {
@@ -304,6 +302,7 @@ public class menuManager {
                             isStaffMenuRunning = false;
                         } catch (InterruptedException e) {
                             Thread.currentThread().interrupt();
+                            System.exit(0);
                             isAdminMenuRunning = false;
 
                         }

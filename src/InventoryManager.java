@@ -1,3 +1,4 @@
+
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -25,7 +26,7 @@ public class InventoryManager {
 
     public void DisplayItems() {
         if (inventory.isEmpty()) {
-            System.out.println("Invetory is empty");
+            System.out.println("Inventory is empty");
             return;
         }
         for (Items items : inventory.values()) {
@@ -70,10 +71,14 @@ public class InventoryManager {
 
     public void updateItem(int id, double newPrice) {
         if (inventory.containsKey(id)) {
-            // Not done yet.
+            Items items = inventory.get(id);
+            items.setItemPrice(newPrice);
             System.out.println("Updated Successfully");
+
         } else {
             System.out.println("Update not Success");
         }
     }
+
+
 }

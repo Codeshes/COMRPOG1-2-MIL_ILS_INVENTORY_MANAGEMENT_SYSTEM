@@ -18,7 +18,7 @@ public class Items {
     public int getItemQuantity() { return itemQuantity; }
 
     public void setItemName(int itemId) { this.itemId = itemId; }
-    public void setItemName(String itemName) { this.itemName = itemName; }
+    public void setItemPrice(int itemPrice) { this.itemPrice = itemPrice; }
     public void setItemPrice(double itemPrice) { this.itemPrice = itemPrice; }
     public void setItemQuantity(int itemQuantity ) { this.itemQuantity = itemQuantity; }
 

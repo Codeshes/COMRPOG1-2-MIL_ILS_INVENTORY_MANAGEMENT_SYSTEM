@@ -17,25 +17,24 @@ public class staffRequestManager {
             System.out.println("There are no request today");
         }
         System.out.println("========================================");
-        System.out.printf("%-5s %-15s %-15s %-15s %-20s%n",
-                "ID", "Item", "Current Price", "Proposed", "Reason");
+        System.out.printf("%-5s %-10s  %-15s %-20s%n",
+                "ID", "Item", "Proposed Price", "Reason");
         System.out.println("========================================");
 
         for (Request request : requests) {
-            System.out.printf("%-5d %-15s %-15.2f %-15.2f %-20s%n",
+            System.out.printf("%-5d %-9s %-15.2f %-20s%n",
                     request.getId(),
                     request.getItemName(),
-                    request.getCurrentPrice(),
                     request.getProposedPrice(),
                     request.getReason());
         }
 
     }
 
-    public void processRequest(Admin admin) {
+    public void processRequest(Admin admin, InventoryManager managerInventory) {
         Scanner sc = new Scanner(System.in);
         for (Request priceChange : requests) {
-            System.out.println("Processing request ID" + priceChange.getId());
+            System.out.println("Processing request ID " + priceChange.getId());
             System.out.println(priceChange);
 
 
@@ -45,18 +44,19 @@ public class staffRequestManager {
 
             boolean ifApproved = admin.reviewRequest(decision);
             if (ifApproved) {
-                System.out.println("Ticket Approved! " + priceChange.getId() + decision);
+                System.out.println("Ticket Approved! " + priceChange.getId() + " " + decision);
             } else {
-                System.out.println("Ticket not Approved! " + priceChange.getId() + decision);
+                System.out.println("Ticket not Approved! " + priceChange.getId() + " " + decision);
             }
-            InventoryManager managerRequest = new InventoryManager();
+            managerInventory.updateItem(priceChange.getId(), priceChange.getProposedPrice());
 
         }
+        requests.clear();
     }
 
-    public void updatedItemPrice(Request priceChange) {
+    public boolean updatedItemPrice(Request priceChange) {
         System.out.println("Price for: " + priceChange.getItemName() +
-                " Updated from" + priceChange.getCurrentPrice() +
-                " to " + priceChange.getProposedPrice());
+                " Updated Price " + priceChange.getProposedPrice());
+        return true;
     }
 }
