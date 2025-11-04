@@ -7,11 +7,7 @@ public class menuManager {
     staffRequestManager requestManager = new staffRequestManager();
     UserManager manageUser = new UserManager();
     int choice;
-    // Will fix the bug on Accepting request
-    // Still not done
-    //SOUT ai wruv wryu
-    //Hello gello
-    // hello hello
+
 
     boolean signupPageRunning = true;
 
