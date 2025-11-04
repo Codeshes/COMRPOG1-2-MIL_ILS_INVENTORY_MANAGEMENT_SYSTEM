@@ -59,6 +59,7 @@ public class menuManager {
                         isStaffMenuRunning = true;
                     } else {
                         System.out.println("Credentials not matched");
+
                     }
 
 
@@ -179,7 +180,7 @@ public class menuManager {
                     for (int i = 0; i < 5; i++) {
                         try {
                             Thread.sleep(700);
-                            System.out.println(".");
+                            System.out.print(".");
                         } catch (InterruptedException e) {
                             Thread.currentThread().interrupt();
                         }
@@ -192,7 +193,7 @@ public class menuManager {
                     for (int i = 0; i < 5; i++) {
                         try {
                             Thread.sleep(200);
-                            System.out.println(".");
+                            System.out.print(".");
                             isAdminMenuRunning = false;
                         } catch (InterruptedException e) {
                             Thread.currentThread().interrupt();
@@ -272,7 +273,7 @@ public class menuManager {
                     for (int i = 0; i < 4; i++) {
                         try {
                             Thread.sleep(200);
-                            System.out.println(".");
+                            System.out.print(".");
                         } catch (InterruptedException e) {
                             Thread.currentThread().interrupt();
                         }
@@ -285,7 +286,7 @@ public class menuManager {
                     for (int i = 0; i < 5; i++) {
                         try {
                             Thread.sleep(200);
-                            System.out.println(".");
+                            System.out.print(".");
                             isStaffMenuRunning = false;
                         } catch (InterruptedException e) {
                             Thread.currentThread().interrupt();
@@ -298,7 +299,7 @@ public class menuManager {
                     System.out.println("Exiting");
                     for (int i = 0; i < 5; i++) {
                         try {
-                            Thread.sleep(200); System.out.println(".");
+                            Thread.sleep(200); System.out.print(".");
                             isStaffMenuRunning = false;
                         } catch (InterruptedException e) {
                             Thread.currentThread().interrupt();
