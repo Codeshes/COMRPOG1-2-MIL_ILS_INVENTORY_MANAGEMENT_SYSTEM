@@ -1,12 +1,19 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
 public class menuManager {
+
+
     Scanner sc = new Scanner(System.in);
     InventoryManager manager = new InventoryManager();
     staffRequestManager requestManager = new staffRequestManager();
     UserManager manageUser = new UserManager();
     int choice;
+
+
+
+    //utility class for input
 
 
     boolean signupPageRunning = true;
@@ -161,10 +168,10 @@ public class menuManager {
                     String keyword = sc.nextLine();
                     manageInventory.SearchElementByKeyword(keyword);
                 }
-                case 9 -> {
+                case 9 ->
                     // view request
                     requestManager.viewRequest();
-                }
+
                 case 10 -> {
                     // object declaration of admin for the decision of an admin into a one request.
                     Admin admin = new Admin();

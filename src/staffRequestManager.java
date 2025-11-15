@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class staffRequestManager {
 
-    private LinkedList<Request> requests = new LinkedList<>();
+    private final LinkedList<Request> requests = new LinkedList<>();
 
     public void submitRequest(Request request) {
         // Price change

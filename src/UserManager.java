@@ -1,7 +1,7 @@
 import java.util.LinkedHashMap;
 
 public class UserManager {
-    private LinkedHashMap<String, User> users;
+    private final LinkedHashMap<String, User> users;
 
     UserManager() {
         users = new LinkedHashMap<>();

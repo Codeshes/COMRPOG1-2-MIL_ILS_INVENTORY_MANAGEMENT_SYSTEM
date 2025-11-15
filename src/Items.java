@@ -1,7 +1,7 @@
 public class Items {
     private static int counterItemId = 100;
     private int itemId;
-    private String itemName;
+    private final String itemName;
     private double itemPrice;
     private int itemQuantity;
 

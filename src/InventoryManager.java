@@ -1,10 +1,9 @@
-
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class InventoryManager {
-    private HashMap<Integer, Items> inventory = new HashMap<>();
-    private Scanner sc = new Scanner(System.in);
+    private final HashMap<Integer, Items> inventory = new HashMap<>();
+    private final Scanner sc = new Scanner(System.in);
 
 
     public void AddItems() {
