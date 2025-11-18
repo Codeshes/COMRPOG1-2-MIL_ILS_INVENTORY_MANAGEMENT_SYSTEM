@@ -34,6 +34,12 @@ public class User {
     public void setRole(String role) { this.role = role; }
 
     @Override
+    /* KITA MO ITONG RETURN, GANYANG FORMAT ANG GAYAHIN MO KASI YUNG
+    *  MGA KUWIT SA ITEM NA FILE CLASS
+    *  KASI ANG NASA ITEM NA FILE CLASS AY HINDI KUWIT KUNDI "|"
+    *  GAYAHIN MOLANG ITONG PUBLIC STATIC USER FROMFILE
+    *  IBASE MO ANG MGA VARIABLE KUNG ANO YUNG NASA CLASS
+    * */
     public String toString() {
         return userId + "," + userName + "," + userPassword + "," + role;
     }
