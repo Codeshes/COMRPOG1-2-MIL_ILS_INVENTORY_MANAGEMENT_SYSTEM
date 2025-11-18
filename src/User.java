@@ -13,6 +13,8 @@ public class User {
 
     }
 
+    // Eto gelo cruz
+    // Gamitan mo ng another constructor yung class ng item
     public User(int id, String userName, String userPassword, String role) {
         this.userId = id;
         this.userName = userName;
