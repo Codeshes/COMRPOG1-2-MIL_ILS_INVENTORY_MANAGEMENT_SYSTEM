@@ -53,6 +53,8 @@ public class UserManager {
             return "none";
         }
     }
+
+    /* ============================================================================================ */
     // Save data to the user.txt
     public void SaveToFile() {
         // Gonna define file path
