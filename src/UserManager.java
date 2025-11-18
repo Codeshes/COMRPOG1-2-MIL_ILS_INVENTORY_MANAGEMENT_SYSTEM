@@ -1,10 +1,12 @@
+import java.io.*;
 import java.util.LinkedHashMap;
 
 public class UserManager {
-    private final LinkedHashMap<String, User> users;
+    private final LinkedHashMap<String, User> users = new LinkedHashMap<>();
+    private final String FILE_NAME = "user.txt";
 
     UserManager() {
-        users = new LinkedHashMap<>();
+        loadFromFile();
     }
 
     //Add User
@@ -12,7 +14,9 @@ public class UserManager {
         User user = new User(userName, userPassword, role);
         users.put(userName, user);
         System.out.println("User added Successfully");
+        SaveToFile();
         System.out.println("USER ID: " + user.getID() + " User added: " + userName + " (" + role + ")");
+
     }
 
     public void displayUser() {
@@ -26,9 +30,11 @@ public class UserManager {
         if (users.containsKey(user)) {
             users.remove(user);
             System.out.println("Removed Successfully!");
+            SaveToFile();
         } else {
             System.out.println("User not found.");
         }
+
     }
 
     public String loginMethod(String userName, String passWord) {
@@ -46,6 +52,47 @@ public class UserManager {
             System.out.println("Login failed.");
             return "none";
         }
+    }
+    // Save data to the user.txt
+    public void SaveToFile() {
+        // Gonna define file path
+        String filePath = "NotepadDatabase\\user.txt";
+        File file = new File(filePath);
+
+        File parentDirectory = file.getParentFile();
+        if (parentDirectory != null && !parentDirectory.exists()) {
+            if (!parentDirectory.mkdir()) {
+                System.err.println("Error creating Directory: " + parentDirectory.getAbsolutePath());
+                return;
+            }
+        }
+
+        try(BufferedWriter dataWriter = new BufferedWriter(new FileWriter("NotepadDatabase\\user.txt"))) {
+            for (User users : users.values()) {
+                dataWriter.write(users.toString());
+                dataWriter.newLine();
+            }
+            dataWriter.close();
+        } catch (IOException e) {
+            System.out.println("Error saving user accounts");
+        }
+
+    }
+
+    public void loadFromFile() {
+        try (BufferedReader dataReader = new BufferedReader(new FileReader("NotepadDatabase\\user.txt"))) {
+            String line;
+            while ((line = dataReader.readLine()) != null) {
+                User user = User.fromFile(line);
+                users.put(user.getUserName(), user);
+            }
+            dataReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Error loading user accounts: " + e.getMessage());
+        } catch (IOException | NumberFormatException e) {
+            System.out.println("error: " + e.getMessage());
+        }
+
     }
 
 
