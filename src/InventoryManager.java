@@ -9,6 +9,11 @@ import java.io.*;
 public class InventoryManager {
     private final HashMap<Integer, Items> inventory = new HashMap<>();
     private final Scanner sc = new Scanner(System.in);
+    private final String FILE_NAME = "items.txt";
+
+    InventoryManager() {
+        loadFromFile();
+    }
 
 
     public void AddItems() {
@@ -106,24 +111,21 @@ public class InventoryManager {
 
         File parentDirectory = file.getParentFile();
         if (parentDirectory != null && !parentDirectory.exists()) {
-
-        }
-    }
-
-
-    try(BufferedWriter dataWriter = new BufferedWriter(new FileWriter("NotepadDatabase\\items.txt"))){
-
-    }
-
-    {
-        for (Items items : inventory.values()) {
-            dataWriter.write(items.toString());
-            dataWriter.newLine();
+            if (!parentDirectory.mkdir()) {
+                System.err.println("Error creating Directory: " + parentDirectory.getAbsolutePath());
+                return;
+            }
         }
 
-    } catch(IOException ex){
 
+        try (BufferedWriter dataWriter = new BufferedWriter(new FileWriter("NotepadDatabase\\user.txt"))) {
+            for (Items items : inventory.values()) {
+                dataWriter.write(items.toString());
+                dataWriter.newLine();
+            }
 
-        System.out.println("Error saving user accounts");
+        } catch (IOException e) {
+            System.out.println("Error saving user accounts");
+        }
     }
 }

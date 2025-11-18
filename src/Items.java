@@ -12,6 +12,15 @@ public class Items {
         this.itemQuantity = itemQuantity;
     }
 
+    public Items(int id, String itemName, double itemPrice, int itemQuantity) {
+        this.itemId = id;
+        this.itemName = itemName;
+        this.itemPrice = itemPrice;
+        this.itemQuantity = itemQuantity;
+
+        if (id >= counterItemId) counterItemId = id + 1;
+    }
+
 
     public int getItemId() { return itemId; }
     public String getItemName() { return itemName; }
@@ -26,6 +35,23 @@ public class Items {
 
     @Override
     public String toString() {
-        return "ID: " + itemId + " | Item name: " + itemName + " | Item price: " + itemPrice + " | Item Quantity: " + itemQuantity;
+        return itemId + "," + itemName + "," + itemPrice + "," + itemQuantity;
     }
+
+    public static Items fromFile(String line) {
+        String[] p = line.split(",");
+
+        if (p.length != 4) {
+            throw new IllegalArgumentException("Invalid user data: " + line);
+        }
+
+
+        return new Items (
+                Integer.parseInt(p[0].trim()),
+                p[1],
+                Double.parseDouble(p[2]),
+                Integer.parseInt(p[3])
+        );
+    }
+
 }
