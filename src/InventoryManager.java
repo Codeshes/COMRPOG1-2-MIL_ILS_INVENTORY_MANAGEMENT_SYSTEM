@@ -1,12 +1,14 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.io.*;
 
 public class InventoryManager {
     private final HashMap<Integer, Items> inventory = new HashMap<>();
     private final Scanner sc = new Scanner(System.in);
-
 
 
     public void AddItems() {
@@ -42,7 +44,7 @@ public class InventoryManager {
 
         double totalSumOfAllItemPrices = 0.0;
 
-        for (Items item : inventory.values()){
+        for (Items item : inventory.values()) {
             totalSumOfAllItemPrices += item.getItemPrice() * item.getItemQuantity();
         }
 
@@ -50,7 +52,9 @@ public class InventoryManager {
         System.err.println("The total Prices of all items were in stock are: " + formattedCurrency);
     }
 
-    public boolean isEmpty() {  return inventory.isEmpty(); }
+    public boolean isEmpty() {
+        return inventory.isEmpty();
+    }
 
     public void RemoveItems(int id) {
         Items itemToDelete = inventory.remove(id);
@@ -96,5 +100,30 @@ public class InventoryManager {
         }
     }
 
+    public void SaveToFile() {
+        String filePath = "NotepadDatabase\\items.txt";
+        File file = new File(filePath);
 
+        File parentDirectory = file.getParentFile();
+        if (parentDirectory != null && !parentDirectory.exists()) {
+
+        }
+    }
+
+
+    try(BufferedWriter dataWriter = new BufferedWriter(new FileWriter("NotepadDatabase\\items.txt"))){
+
+    }
+
+    {
+        for (Items items : inventory.values()) {
+            dataWriter.write(items.toString());
+            dataWriter.newLine();
+        }
+
+    } catch(IOException ex){
+
+
+        System.out.println("Error saving user accounts");
+    }
 }

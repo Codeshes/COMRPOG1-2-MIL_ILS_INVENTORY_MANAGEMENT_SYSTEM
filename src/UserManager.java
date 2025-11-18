@@ -55,7 +55,7 @@ public class UserManager {
     }
     // Save data to the user.txt
     public void SaveToFile() {
-        // Gonna define file path
+        // Gona define file path
         String filePath = "NotepadDatabase\\user.txt";
         File file = new File(filePath);
 
