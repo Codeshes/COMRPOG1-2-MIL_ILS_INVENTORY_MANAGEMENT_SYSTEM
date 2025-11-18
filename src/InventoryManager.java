@@ -103,6 +103,7 @@ public class InventoryManager {
         }
     }
 
+    //WRITE FILES
     public void SaveToFile() {
         String filePath = "NotepadDatabase\\items.txt";
         File file = new File(filePath);
@@ -126,4 +127,18 @@ public class InventoryManager {
             System.out.println("Error saving user accounts");
         }
     }
-}
+} //LOAD FILES
+    public void loadFromFile() {
+        try (BufferedReader dataReader = new BufferedReader(new FileReader("NotepadDatabase\\user.txt"))) {
+            String line;
+            while ((line = dataReader.readLine()) != null) {
+                Items item = Items.fromFile(line);
+                inventory.put(item.getItemId(), item);
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("Error loading items: " + e.getMessage());
+        } catch (IOException | NumberFormatException e) {
+            System.out.println("error: " + e.getMessage());
+        }
+    }
