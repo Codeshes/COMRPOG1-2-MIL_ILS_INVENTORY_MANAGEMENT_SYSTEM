@@ -11,7 +11,7 @@ public class Main {
         * fileName -> Class
         *
         * items.txt -> InventoryManager
-        * request.txt -> staffRequestManager
+        * DONE - request.txt -> staffRequestManager
         * user.txt -> UserManager
         * */
     }

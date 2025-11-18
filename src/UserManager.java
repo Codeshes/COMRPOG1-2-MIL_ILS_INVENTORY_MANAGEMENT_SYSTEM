@@ -72,7 +72,7 @@ public class UserManager {
                 dataWriter.write(users.toString());
                 dataWriter.newLine();
             }
-            dataWriter.close();
+
         } catch (IOException e) {
             System.out.println("Error saving user accounts");
         }
@@ -86,7 +86,7 @@ public class UserManager {
                 User user = User.fromFile(line);
                 users.put(user.getUserName(), user);
             }
-            dataReader.close();
+
         } catch (FileNotFoundException e) {
             System.out.println("Error loading user accounts: " + e.getMessage());
         } catch (IOException | NumberFormatException e) {
