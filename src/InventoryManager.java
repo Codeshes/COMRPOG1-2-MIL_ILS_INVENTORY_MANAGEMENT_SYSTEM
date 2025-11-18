@@ -1,9 +1,12 @@
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class InventoryManager {
     private final HashMap<Integer, Items> inventory = new HashMap<>();
     private final Scanner sc = new Scanner(System.in);
+
 
 
     public void AddItems() {
@@ -31,6 +34,20 @@ public class InventoryManager {
         for (Items items : inventory.values()) {
             System.out.println(items);
         }
+        Locale localCurrency = new Locale.Builder()
+                .setLanguage("en")
+                .setRegion("PH")
+                .build();
+        NumberFormat pesoSignFormatter = NumberFormat.getCurrencyInstance(localCurrency);
+
+        double totalSumOfAllItemPrices = 0.0;
+
+        for (Items item : inventory.values()){
+            totalSumOfAllItemPrices += item.getItemPrice() * item.getItemQuantity();
+        }
+
+        String formattedCurrency = pesoSignFormatter.format(totalSumOfAllItemPrices);
+        System.err.println("The total Prices of all items were in stock are: " + formattedCurrency);
     }
 
     public boolean isEmpty() {  return inventory.isEmpty(); }

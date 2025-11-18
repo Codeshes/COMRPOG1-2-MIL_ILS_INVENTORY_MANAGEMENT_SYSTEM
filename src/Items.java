@@ -1,9 +1,9 @@
 public class Items {
-    private static int counterItemId = 100;
-    private int itemId;
-    private final String itemName;
-    private double itemPrice;
-    private int itemQuantity;
+    protected static int counterItemId = 100;
+    protected int itemId;
+    protected final String itemName;
+    protected double itemPrice;
+    protected int itemQuantity;
 
     Items(String itemName, double itemPrice, int itemQuantity) {
         this.itemId = counterItemId++;
@@ -11,6 +11,7 @@ public class Items {
         this.itemPrice = itemPrice;
         this.itemQuantity = itemQuantity;
     }
+
 
     public int getItemId() { return itemId; }
     public String getItemName() { return itemName; }

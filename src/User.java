@@ -1,9 +1,9 @@
 public class User {
-    private static int counterUserId = 200;
-    private final int userId;
-    private String userName;
-    private String userPassword;
-    private String role;
+    protected static int counterUserId = 200;
+    protected final int userId;
+    protected String userName;
+    protected String userPassword;
+    protected String role;
 
     User(String userName, String userPassword, String role) {
         this.userId = counterUserId++;

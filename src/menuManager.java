@@ -13,6 +13,7 @@ public class menuManager {
 
 
 
+
     //utility class for input
 
 
@@ -308,7 +309,6 @@ public class menuManager {
                             Thread.currentThread().interrupt();
                             System.exit(0);
                             isAdminMenuRunning = false;
-
                         }
                     }
                 }
