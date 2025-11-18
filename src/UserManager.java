@@ -1,7 +1,4 @@
-import java.io.File;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
+import java.io.*;
 import java.util.LinkedHashMap;
 
 public class UserManager {
@@ -56,8 +53,6 @@ public class UserManager {
             return "none";
         }
     }
-
-    /* ============================================================================================ */
     // Save data to the user.txt
     public void SaveToFile() {
         // Gonna define file path
