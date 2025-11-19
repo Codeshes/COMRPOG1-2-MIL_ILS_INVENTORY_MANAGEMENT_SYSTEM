@@ -37,11 +37,6 @@ public class UserManager {
     }
 
     public String loginMethod(String userName, String passWord) {
-        if (userName.equals("HeadAdmin") && passWord.equals("HeadAdminPass")) {
-            System.out.println("Login successful. Welcome Admin");
-            return "admin";
-        }
-
         User user = users.get(userName);
 
         if (user != null && user.getUserPassword().equals(passWord)) {
