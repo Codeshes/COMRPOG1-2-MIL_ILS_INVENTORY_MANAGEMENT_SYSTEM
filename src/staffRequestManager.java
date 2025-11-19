@@ -97,7 +97,14 @@ public class staffRequestManager {
         try (BufferedReader dataReader = new BufferedReader(new FileReader("NotepadDatabase\\request.txt"))) {
             String line;
             while ((line = dataReader.readLine()) != null) {
+                if (line.trim().isEmpty()) continue;
+                try{
+                    Request request = Request.fromFile(line);
+                    requests.add(request);
 
+                } catch (FileNotFoundException e){
+                    System.err.println("");
+                }
             }
         } catch (FileNotFoundException e) {
             System.out.println("Error loading requests: " + e.getMessage());
