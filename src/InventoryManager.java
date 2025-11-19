@@ -109,6 +109,17 @@ public class InventoryManager {
         }
     }
 
+    public String getItemName(int id) {
+        if (inventory.containsKey(id)) {
+            Items items = inventory.get(id);
+
+            return items.getItemName();
+        } else {
+            System.out.println("Error: Item with ID " + id + " not found on inventory");
+        }
+        return"";
+    }
+
     // WRITE FILES
     public void SaveToFile() {
         // FIX: Define filePath using FILE_NAME

@@ -263,15 +263,20 @@ public class menuManager {
                         // if not it bypasses the if statement and go direct into the userInput
                     System.out.println("Enter Item ID to edit");
                     int itemId = sc.nextInt();
+                    String itemName = inventoryManager.getItemName(itemId);
 
+                    if (itemName == null || itemName.isEmpty()) {
+                        System.out.println("Error: the entered Item ID was ot found or is invalid");
+                        return;
+                    }
                     System.out.println("Enter the new PRICE of the ITEM");
-                    double proposedPrice = sc.nextInt();
+                    double proposedPrice = sc.nextDouble();
                     sc.nextLine();
 
                     System.out.println("Enter the reason of Change");
                     String reason = sc.nextLine();
 
-                    Request request = new Request(itemId, proposedPrice, reason);
+                    Request request = new Request(itemName, proposedPrice, reason);
                     staffRequestManager.submitRequest(request);
                     System.out.println("Submitting request");
                     for (int i = 0; i < 4; i++) {
