@@ -97,19 +97,13 @@ public class staffRequestManager {
         try (BufferedReader dataReader = new BufferedReader(new FileReader("NotepadDatabase\\request.txt"))) {
             String line;
             while ((line = dataReader.readLine()) != null) {
-                if (line.trim().isEmpty()) continue;
-                try{
-                    Request request = Request.fromFile(line);
-                    requests.add(request);
-
-                } catch (FileNotFoundException e){
-                    System.err.println("");
-                }
+                Request request = Request.fromFile(line);
+                requests.add(request);
             }
         } catch (FileNotFoundException e) {
-            System.out.println("Error loading requests: " + e.getMessage());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.err.println("Error loading request: " + e.getMessage());
+        } catch (IOException | NumberFormatException e) {
+            System.out.println("error: " + e.getMessage());
         }
 
     }
