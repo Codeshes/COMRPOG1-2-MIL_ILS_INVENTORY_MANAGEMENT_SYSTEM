@@ -99,8 +99,11 @@ public class staffRequestManager {
             while ((line = dataReader.readLine()) != null) {
 
             }
+        } catch (FileNotFoundException e) {
+            System.out.println("Error loading requests: " + e.getMessage());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
     }
 }
