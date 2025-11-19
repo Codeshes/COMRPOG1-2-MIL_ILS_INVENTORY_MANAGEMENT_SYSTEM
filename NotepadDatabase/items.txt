@@ -1,2 +1,1 @@
-100,Chocolate,50.0,55
-101,Chocolate,50.0,55
+ID: 100|Item name: Choco|Item Price: 50.0|Item Quantity: 55

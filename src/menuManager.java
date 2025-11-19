@@ -304,6 +304,7 @@ public class menuManager {
                     for (int i = 0; i < 5; i++) {
                         try {
                             Thread.sleep(200); System.out.print(".");
+                            System.exit(0);
                             isStaffMenuRunning = false;
                         } catch (InterruptedException e) {
                             Thread.currentThread().interrupt();

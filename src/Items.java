@@ -33,25 +33,28 @@ public class Items {
     public void setItemQuantity(int itemQuantity ) { this.itemQuantity = itemQuantity; }
 
 
+
     @Override
     public String toString() {
-        return itemId + "," + itemName + "," + itemPrice + "," + itemQuantity;
+        return "ID: " + itemId + "|" +
+                "Item name: " + itemName + "|" +
+                "Item Price: " + itemPrice + "|" +
+                "Item Quantity: " + itemQuantity;
     }
 
     public static Items fromFile(String line) {
-        String[] p = line.split(",");
+        String[] p = line.split("\\|");
 
         if (p.length != 4) {
-            throw new IllegalArgumentException("Invalid user data: " + line);
+            throw new IllegalArgumentException("Invalid item data: " + line);
         }
 
+        int id = Integer.parseInt(p[0].replace("ID:", "").trim());
+        String name = p[1].replace("Item name:", "").trim();
+        double price = Double.parseDouble(p[2].replace("Item Price:", "").trim());
+        int qty = Integer.parseInt(p[3].replace("Item Quantity:", "").trim());
 
-        return new Items (
-                Integer.parseInt(p[0].trim()),
-                p[1],
-                Double.parseDouble(p[2]),
-                Integer.parseInt(p[3])
-        );
+        return new Items(id, name, price, qty);
     }
 
 }
