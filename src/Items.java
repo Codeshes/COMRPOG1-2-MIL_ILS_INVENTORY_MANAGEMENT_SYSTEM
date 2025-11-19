@@ -37,9 +37,9 @@ public class Items {
     @Override
     public String toString() {
         return "ID: " + itemId + "|" +
-                "Item name: " + itemName + "|" +
-                "Item Price: " + itemPrice + "|" +
-                "Item Quantity: " + itemQuantity;
+                " Item name: " + itemName + "|" +
+                " Item Price: " + itemPrice + "|" +
+                " Item Quantity: " + itemQuantity;
     }
 
     public static Items fromFile(String line) {
