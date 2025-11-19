@@ -7,6 +7,10 @@ public class staffRequestManager {
 
     private final LinkedList<Request> requests = new LinkedList<>();
 
+    staffRequestManager() {
+        loadFromFile();
+    }
+
     public void submitRequest(Request request) {
         // Price change
         requests.add(request);
@@ -60,5 +64,13 @@ public class staffRequestManager {
         System.out.println("Price for: " + priceChange.getItemName() +
                 " Updated Price " + priceChange.getProposedPrice());
         return true;
+    }
+
+    public void safeToFile() {
+
+    }
+
+    public void loadFromFile() {
+
     }
 }
