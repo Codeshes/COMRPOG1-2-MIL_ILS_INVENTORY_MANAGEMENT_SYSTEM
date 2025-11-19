@@ -1,7 +1,4 @@
-
-
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -72,19 +69,28 @@ public class staffRequestManager {
 
     // write files here
     public void saveToFile() {
-    String filePath = "NotepadDatabase\\" + request.txt;
+
+    String filePath = "NotepadDatabase\\request.txt";
     File file = new File(filePath);
-    File parentDirectory = file.getParentfile();
+
+    File parentDirectory = file.getParentFile();
     if (parentDirectory !=null && !parentDirectory.exists()){
         if (!parentDirectory.mkdir()) {
-            System.err.println("Error creating Directory: " + parentDirectory.getAbsolutepath());
-        return;
+            System.err.println("Error creating Directory: " + parentDirectory.getAbsolutePath());
+            return;
         }
     }
 
     }
     // load files here
     public void loadFromFile() {
-    try (BufferedReader dataReader = new BufferedReader(new FileReader("")))
+    try (BufferedReader dataReader = new BufferedReader(new FileReader("NotepadDatabase\\request.txt"))) {
+        String line;
+        while ((line = dataReader.readLine()) != null) {
+
+        }
+    } catch (IOException e) {
+        throw new RuntimeException(e);
+    }
     }
 }
