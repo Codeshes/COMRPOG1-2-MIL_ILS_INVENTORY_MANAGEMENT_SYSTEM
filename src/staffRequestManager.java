@@ -70,27 +70,37 @@ public class staffRequestManager {
     // write files here
     public void saveToFile() {
 
-    String filePath = "NotepadDatabase\\request.txt";
-    File file = new File(filePath);
+        String filePath = "NotepadDatabase\\request.txt";
+        File file = new File(filePath);
 
-    File parentDirectory = file.getParentFile();
-    if (parentDirectory !=null && !parentDirectory.exists()){
-        if (!parentDirectory.mkdir()) {
-            System.err.println("Error creating Directory: " + parentDirectory.getAbsolutePath());
-
+        File parentDirectory = file.getParentFile();
+        if (parentDirectory != null && !parentDirectory.exists()) {
+            if (!parentDirectory.mkdir()) {
+                System.err.println("Error creating Directory: " + parentDirectory.getAbsolutePath());
+                return;
+            }
         }
-    }
+
+        try (BufferedWriter dataWriter = new BufferedWriter(new FileWriter("NotepadData\\request.txt"))) {
+            for (Request requests : this.requests) {
+                dataWriter.write(requests.toString());
+                dataWriter.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Error saving request: " + e.getMessage());
+        }
 
     }
+
     // load files here
     public void loadFromFile() {
-    try (BufferedReader dataReader = new BufferedReader(new FileReader("NotepadDatabase\\request.txt"))) {
-        String line;
-        while ((line = dataReader.readLine()) != null) {
+        try (BufferedReader dataReader = new BufferedReader(new FileReader("NotepadDatabase\\request.txt"))) {
+            String line;
+            while ((line = dataReader.readLine()) != null) {
 
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-    } catch (IOException e) {
-        throw new RuntimeException(e);
-    }
     }
 }
