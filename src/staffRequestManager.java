@@ -77,7 +77,7 @@ public class staffRequestManager {
     if (parentDirectory !=null && !parentDirectory.exists()){
         if (!parentDirectory.mkdir()) {
             System.err.println("Error creating Directory: " + parentDirectory.getAbsolutePath());
-            return;
+
         }
     }
 
