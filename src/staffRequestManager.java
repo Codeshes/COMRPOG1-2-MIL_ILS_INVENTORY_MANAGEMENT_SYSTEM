@@ -1,5 +1,7 @@
 
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -73,10 +75,16 @@ public class staffRequestManager {
     String filePath = "NotepadDatabase\\" + request.txt;
     File file = new File(filePath);
     File parentDirectory = file.getParentfile();
+    if (parentDirectory !=null && !parentDirectory.exists()){
+        if (!parentDirectory.mkdir()) {
+            System.err.println("Error creating Directory: " + parentDirectory.getAbsolutepath());
+        return;
+        }
+    }
 
     }
-    // read files here
+    // load files here
     public void loadFromFile() {
-
+    try (BufferedReader dataReader = new BufferedReader(new FileReader("")))
     }
 }
