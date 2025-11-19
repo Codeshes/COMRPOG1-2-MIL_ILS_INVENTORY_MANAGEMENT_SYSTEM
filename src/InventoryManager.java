@@ -114,7 +114,6 @@ public class InventoryManager {
         // FIX: Define filePath using FILE_NAME
         String filePath = "NotepadDatabase\\" + FILE_NAME;
         File file = new File(filePath);
-
         File parentDirectory = file.getParentFile();
         if (parentDirectory != null && !parentDirectory.exists()) {
             if (!parentDirectory.mkdir()) {

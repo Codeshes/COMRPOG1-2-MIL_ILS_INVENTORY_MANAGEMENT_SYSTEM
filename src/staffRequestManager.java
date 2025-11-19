@@ -68,10 +68,14 @@ public class staffRequestManager {
         return true;
     }
 
+    // write files here
     public void saveToFile() {
+    String filePath = "NotepadDatabase\\" + request.txt;
+    File file = new File(filePath);
+    File parentDirectory = file.getParentfile();
 
     }
-
+    // read files here
     public void loadFromFile() {
 
     }
