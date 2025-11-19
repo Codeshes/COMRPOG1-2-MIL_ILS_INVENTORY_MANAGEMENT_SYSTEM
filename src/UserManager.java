@@ -3,7 +3,6 @@ import java.util.LinkedHashMap;
 
 public class UserManager {
     private final LinkedHashMap<String, User> users = new LinkedHashMap<>();
-    private final String FILE_NAME = "user.txt";
 
     UserManager() {
         loadFromFile();
