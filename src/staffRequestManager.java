@@ -14,6 +14,7 @@ public class staffRequestManager {
     public void submitRequest(Request request) {
         // Price change
         requests.add(request);
+        saveToFile();
         System.out.println("Request sent!");
     }
 
@@ -66,7 +67,7 @@ public class staffRequestManager {
         return true;
     }
 
-    public void safeToFile() {
+    public void saveToFile() {
 
     }
 
