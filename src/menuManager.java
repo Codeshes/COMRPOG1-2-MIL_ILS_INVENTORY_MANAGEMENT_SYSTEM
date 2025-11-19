@@ -301,9 +301,12 @@ public class menuManager {
                 }
                 case 0 -> {
                     System.out.println("Exiting");
-                    for (int i = 0; i < 5; i++) {
+
                         try {
-                            Thread.sleep(200); System.out.print(".");
+                            for (int i = 0; i < 5; i++) {
+                                Thread.sleep(200);
+                                System.out.print(".");
+                            }
                             System.exit(0);
                             isStaffMenuRunning = false;
                         } catch (InterruptedException e) {
@@ -311,7 +314,7 @@ public class menuManager {
                             System.exit(0);
                             isAdminMenuRunning = false;
                         }
-                    }
+
                 }
 
             }
