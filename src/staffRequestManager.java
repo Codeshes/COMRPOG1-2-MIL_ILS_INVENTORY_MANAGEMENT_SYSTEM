@@ -56,6 +56,7 @@ public class staffRequestManager {
                 System.out.println("Ticket not Approved! " + priceChange.getId() + " " + decision);
             }
             managerInventory.updateItem(priceChange.getId(), priceChange.getProposedPrice());
+            saveToFile();
 
         }
         requests.clear();
