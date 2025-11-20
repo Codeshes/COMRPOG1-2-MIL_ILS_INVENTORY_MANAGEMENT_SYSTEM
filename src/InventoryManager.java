@@ -33,14 +33,6 @@ public class InventoryManager {
     }
 
     public void DisplayItems() {
-        if (inventory.isEmpty()) {
-            System.out.println("Inventory is empty");
-            return;
-        }
-        for (Items items : inventory.values()) {
-            System.out.println(items);
-        }
-
         Locale localCurrency = new Locale.Builder()
                 .setLanguage("en")
                 .setRegion("PH")
@@ -55,7 +47,20 @@ public class InventoryManager {
         }
 
         String formattedCurrency = pesoSignFormatter.format(totalSumOfAllItemPrices);
+
+        if (inventory.isEmpty()) {
+            System.out.println("Inventory is empty");
+            return;
+        }
+        for (Items items : inventory.values()) {
+            System.out.println(items);
+        }
         System.err.println("The total Prices of all items were in stock are: " + formattedCurrency);
+
+        System.out.println("Please ENTER to continue....");
+        sc.nextLine();
+
+
     }
 
     public boolean isEmpty() {
@@ -117,7 +122,7 @@ public class InventoryManager {
         } else {
             System.out.println("Error: Item with ID " + id + " not found on inventory");
         }
-        return"";
+        return "";
     }
 
     // WRITE FILES

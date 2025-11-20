@@ -10,8 +10,8 @@ public class Main {
         *
         * fileName -> Class
         *
-        * items.txt -> InventoryManager
-        * request.txt -> staffRequestManager
+        * DONE - items.txt -> InventoryManager
+        * DONE - request.txt -> staffRequestManager
         * DONE - user.txt -> UserManager
         * */
     }

@@ -23,7 +23,6 @@ public class User {
 
         if (id >= counterUserId) counterUserId = id + 1;
     }
-
     public int getID() { return userId; }
     public String getUserName() { return userName; }
     public String getUserPassword() { return userPassword; }
