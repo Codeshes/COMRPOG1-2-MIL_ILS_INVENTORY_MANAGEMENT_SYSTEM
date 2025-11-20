@@ -30,10 +30,12 @@ public class menuManager {
             boolean isValid = false;
             while (!isValid) {
                 try {
+                    System.out.println("====== ENTER YOUR CREDENTIALS ======");
                     System.out.print("Enter your choice: ");
                     choice = sc.nextInt();
                     sc.nextLine();
                     isValid = true;
+
                 } catch (InputMismatchException e) {
                     System.out.println("The choice must be a NUMBER, please try again.");
                     System.out.println("---------------------------");
@@ -82,12 +84,25 @@ public class menuManager {
                         System.exit(0);
                     }
                 }
+
+                default -> {
+                    try {
+                        System.out.print("Invalid Choice. Please try again");
+                        for (int i = 0; i < 5; i++) {
+                            Thread.sleep(300);
+                            System.out.print(".");
+                        }
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                        System.out.println("Exception occurred: " + e.getMessage());
+                    }
+                }
             }
 
         }
     }
 
-    /*====================================================================================*/
+    /*===================================================================================*/
     // Used in loop
     boolean isAdminMenuRunning = true;
 
@@ -121,7 +136,7 @@ public class menuManager {
             } catch (InputMismatchException e) {
                 Thread.currentThread().interrupt();
                 System.out.println("Choice must be a Number");
-                return;
+                break;
             }
 
             switch (choice) {
