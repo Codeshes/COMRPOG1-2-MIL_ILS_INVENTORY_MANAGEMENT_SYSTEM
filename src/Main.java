@@ -13,6 +13,7 @@ public class Main {
         * DONE - items.txt -> InventoryManager
         * DONE - request.txt -> staffRequestManager
         * DONE - user.txt -> UserManager
+        * We need to fix other bugs
         * */
     }
 }
