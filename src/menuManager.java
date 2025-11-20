@@ -35,7 +35,7 @@ public class menuManager {
                     sc.nextLine();
                     isValid = true;
                 } catch (InputMismatchException e) {
-                    System.out.println("The choice must be a NUMBER");
+                    System.out.println("The choice must be a NUMBER, please try again.");
                     System.out.println("---------------------------");
                     sc.nextLine();
                 }
@@ -320,6 +320,19 @@ public class menuManager {
                             isAdminMenuRunning = false;
                         }
 
+                }
+                default -> {
+                    System.out.println("Error detected, try again.");
+
+                    try {
+                        for (int i = 0; i < 5; i++) {
+                            Thread.sleep(200);
+                            System.out.println(".");
+                            }
+
+                        } catch (InterruptedException e){
+                        Thread.currentThread()
+                    }
                 }
 
             }
