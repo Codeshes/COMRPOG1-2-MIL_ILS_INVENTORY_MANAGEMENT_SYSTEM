@@ -236,12 +236,26 @@ public class menuManager {
                         isAdminMenuRunning = false;
                     }
                 }
+                default -> {
+                    System.out.println("Error detected.");
 
+                    try {
+                        for (int i = 0; i < 4; i++) {
+                            Thread.sleep(200);
+                            System.out.println(".");
+                        }
+
+                        }catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                            System.out.println(".");
+                        }
+                    }
+                }
 
             }
         }
 
-    }
+
 
     /*====================================================================================*/
     boolean isStaffMenuRunning = true;
@@ -337,7 +351,7 @@ public class menuManager {
 
                 }
                 default -> {
-                    System.out.println("Error detected, try again.");
+                    System.out.println("Error detected, please try again.");
 
                     try {
                         for (int i = 0; i < 5; i++) {
@@ -346,7 +360,8 @@ public class menuManager {
                             }
 
                         } catch (InterruptedException e){
-                        Thread.currentThread()
+                        Thread.currentThread().interrupt();
+                        System.out.println("Error occured." + e.getMessage());
                     }
                 }
 
