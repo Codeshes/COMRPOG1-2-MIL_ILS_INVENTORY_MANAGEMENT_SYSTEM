@@ -1,1 +1,2 @@
-ID: 100|Item name: Choco|Item Price: 50.0|Item Quantity: 55
+ID: 100| Item name: Choco| Item Price: 19000.0| Item Quantity: 55
+ID: 101| Item name: PC| Item Price: 29000.0| Item Quantity: 10

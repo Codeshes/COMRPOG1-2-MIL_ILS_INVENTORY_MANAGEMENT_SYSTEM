@@ -267,7 +267,7 @@ public class menuManager {
 
                     if (itemName == null || itemName.isEmpty()) {
                         System.out.println("Error: the entered Item ID was ot found or is invalid");
-                        return;
+                        break;
                     }
                     System.out.println("Enter the new PRICE of the ITEM");
                     double proposedPrice = sc.nextDouble();

@@ -32,11 +32,10 @@ public class Request {
 
     @Override
     public String toString() {
-        return "Price Change Request:" +
-                "ID = " + id +
-                ", Item name: " + itemName + '\'' +
-                ", Proposed Price: " + proposedPrice +
-                ", REASON: " + reason + '\'';
+        return "ID:" + id +
+                "|Item name:" + itemName +
+                "|Proposed Price: " + proposedPrice +
+                "|REASON:" + reason;
 
     }
 

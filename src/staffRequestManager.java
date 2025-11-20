@@ -13,8 +13,8 @@ public class staffRequestManager {
     public void submitRequest(Request request) {
         // Price change
         requests.add(request);
-        saveToFile();
         System.out.println("Request sent!");
+        saveToFile();
     }
 
     public void viewRequest() {
@@ -81,7 +81,7 @@ public class staffRequestManager {
             }
         }
 
-        try (BufferedWriter dataWriter = new BufferedWriter(new FileWriter("NotepadData\\request.txt"))) {
+        try (BufferedWriter dataWriter = new BufferedWriter(new FileWriter("NotepadDatabase\\request.txt"))) {
             for (Request requests : this.requests) {
                 dataWriter.write(requests.toString());
                 dataWriter.newLine();
