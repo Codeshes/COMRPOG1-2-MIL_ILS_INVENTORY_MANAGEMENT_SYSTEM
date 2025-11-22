@@ -57,8 +57,6 @@ public class InventoryManager {
         }
         System.err.println("The total Prices of all items were in stock are: " + formattedCurrency);
 
-        System.out.println("Please ENTER to continue....");
-        sc.nextLine();
 
 
     }
