@@ -1,11 +1,11 @@
 import java.text.NumberFormat;
 import java.util.Locale;
-import java.util.HashMap;
+import java.util.TreeMap;
 import java.util.Scanner;
 import java.io.*;
 
 public class InventoryManager {
-    private final HashMap<Integer, Items> inventory = new HashMap<>();
+    private final TreeMap<Integer, Items> inventory = new TreeMap<>();
     private final Scanner sc = new Scanner(System.in);
     private final String FILE_NAME = "items.txt";
 
@@ -17,7 +17,6 @@ public class InventoryManager {
         System.out.print("Enter the item name: ");
         String itemName = sc.nextLine();
 
-        // Use nextDouble() for prices if Items class supports double, or stick to int
         System.out.print("Enter Price: ");
         int itemPrice = sc.nextInt();
         sc.nextLine();
@@ -28,7 +27,7 @@ public class InventoryManager {
 
         Items items = new Items(itemName, itemPrice, itemQuantity);
         inventory.put(items.getItemId(), items);
-        SaveToFile(); // Added SaveToFile
+        SaveToFile();
         System.out.println("Item added Successfully: " + items);
     }
 
@@ -42,7 +41,6 @@ public class InventoryManager {
         double totalSumOfAllItemPrices = 0.0;
 
         for (Items item : inventory.values()) {
-            // Assuming getItemPrice returns a number type compatible with double
             totalSumOfAllItemPrices += item.getItemPrice() * item.getItemQuantity();
         }
 
@@ -55,7 +53,9 @@ public class InventoryManager {
         for (Items items : inventory.values()) {
             System.out.println(items);
         }
-        System.err.println("The total Prices of all items were in stock are: " + formattedCurrency);
+        System.out.println("=====================================================================");
+        System.out.println("\nThe total Prices of all items were in stock are: " + formattedCurrency);
+        System.out.println("\n");
 
 
 
@@ -70,14 +70,13 @@ public class InventoryManager {
 
         if (itemToDelete != null) {
             System.out.println("Item removed Successfully: " + itemToDelete.getItemName());
-            SaveToFile(); // FIX: Added SaveToFile
+            SaveToFile();
         } else {
             System.out.println("Item removal failed: ID " + id + " not found.");
         }
     }
 
     public void SearchElementById(int id) {
-        // FIX: Check for null to avoid NullPointerException
         Items item = inventory.get(id);
 
         if (item != null) {
@@ -103,9 +102,8 @@ public class InventoryManager {
     public void updateItem(int id, double newPrice) {
         if (inventory.containsKey(id)) {
             Items items = inventory.get(id);
-            // Assuming Items.setItemPrice accepts a double
             items.setItemPrice(newPrice);
-            SaveToFile(); // FIX: Added SaveToFile
+            SaveToFile();
             System.out.println("Updated Successfully for ID: " + id);
         } else {
             System.out.println("Update not Success: ID " + id + " not found.");
@@ -125,7 +123,6 @@ public class InventoryManager {
 
     // WRITE FILES
     public void SaveToFile() {
-        // FIX: Define filePath using FILE_NAME
         String filePath = "NotepadDatabase\\" + FILE_NAME;
         File file = new File(filePath);
         File parentDirectory = file.getParentFile();
