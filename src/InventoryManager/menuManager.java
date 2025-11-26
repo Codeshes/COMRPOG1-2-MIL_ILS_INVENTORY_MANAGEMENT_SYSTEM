@@ -156,6 +156,7 @@ public class menuManager {
                         userManager.removeUser(id);
                     } catch (InputMismatchException e) {
                         System.out.println("Invalid input");
+                        sc.nextLine();
                     } catch (Exception e) {
                         System.out.println("Exception has occur: " + e.getMessage());
                     }
@@ -189,6 +190,7 @@ public class menuManager {
                     manageInventory.SearchElementById(id);
                     } catch (InputMismatchException e) {
                         System.out.println("Invalid Input");
+                        sc.nextLine();
                     } catch (Exception e) {
                         System.out.println("Exception has occur: " + e.getMessage());
                     }
@@ -338,6 +340,7 @@ public class menuManager {
 
                     } catch (InputMismatchException e) {
                         System.out.println("Invalid Input");
+                        sc.nextLine();
                     } catch (Exception e) {
                         System.out.println("Exception has occur: " + e.getMessage());
                     }
