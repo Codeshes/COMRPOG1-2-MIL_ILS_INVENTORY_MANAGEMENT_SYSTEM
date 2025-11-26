@@ -221,7 +221,7 @@ public class menuManager {
                 }
 
                 case 11 -> {
-                    System.out.println("Logging out");
+                    System.out.print("Logging out");
                     try {
                     for (int i = 0; i < 5; i++) {
 
@@ -357,7 +357,7 @@ public class menuManager {
                     staffRequestManager.viewRequest();
                 }
                 case 4 -> {
-                    System.out.println("Logging out");
+                    System.out.print("Logging out");
                     for (int i = 0; i < 5; i++) {
                         try {
                             Thread.sleep(200);
@@ -371,7 +371,7 @@ public class menuManager {
                     }
                 }
                 case 0 -> {
-                    System.out.println("Exiting");
+                    System.out.print("Exiting");
 
                         try {
                             for (int i = 0; i < 5; i++) {
@@ -388,7 +388,7 @@ public class menuManager {
 
                 }
                 default -> {
-                    System.out.println("Invalid Choices, please try again.");
+                    System.out.print("Invalid Choices, please try again.");
 
                     try {
                         for (int i = 0; i < 5; i++) {
