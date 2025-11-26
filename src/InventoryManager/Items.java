@@ -29,10 +29,8 @@ public class Items {
     public double getItemPrice() { return itemPrice; }
     public int getItemQuantity() { return itemQuantity; }
 
-    public void setItemName(int itemId) { this.itemId = itemId; }
-    public void setItemPrice(int itemPrice) { this.itemPrice = itemPrice; }
     public void setItemPrice(double itemPrice) { this.itemPrice = itemPrice; }
-    public void setItemQuantity(int itemQuantity ) { this.itemQuantity = itemQuantity; }
+
 
 
 

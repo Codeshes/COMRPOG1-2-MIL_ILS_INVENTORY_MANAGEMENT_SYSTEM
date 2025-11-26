@@ -28,12 +28,8 @@ public class User {
     public String getUserPassword() { return userPassword; }
     public String getRole() { return  role; }
 
-    public void setUserName(String userName) { this.userName = userName; }
-    public void setUserPassword(String userPassword) { this.userPassword = userPassword; }
-    public void setRole(String role) { this.role = role; }
 
     @Override
-
     public String toString() {
         return "ID: " + userId + " | " +
                 "Username: " + userName + " | " +

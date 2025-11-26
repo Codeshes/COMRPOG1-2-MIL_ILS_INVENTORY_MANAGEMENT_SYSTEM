@@ -1,7 +1,6 @@
 package InventoryManager;
 
 import java.text.NumberFormat;
-import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.TreeMap;
 import java.util.Scanner;

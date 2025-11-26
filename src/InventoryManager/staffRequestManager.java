@@ -83,12 +83,6 @@ public class staffRequestManager {
         saveToFile();
     }
 
-    public boolean updatedItemPrice(Request priceChange) {
-        System.out.println("Price for: " + priceChange.getItemName() +
-                " Updated Price " + priceChange.getProposedPrice());
-        return true;
-    }
-
     public void saveToFile() {
 
         String filePath = "NotepadDatabase\\request.txt";

@@ -350,12 +350,12 @@ public class menuManager {
                     }
 
                 }
-                case 3 -> {
+                case 3 ->
                     /*
                     This block of code is for view pending request
                      */
-                    staffRequestManager.viewRequest();
-                }
+                    staffRequestManager.pendingRequest();
+
                 case 4 -> {
                     System.out.print("Logging out");
                     for (int i = 0; i < 5; i++) {
