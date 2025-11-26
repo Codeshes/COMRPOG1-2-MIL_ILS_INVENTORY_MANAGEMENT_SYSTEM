@@ -1,4 +1,3 @@
-200 | HeadAdmin | HeadAdminPass | admin
-201 | Staff | Staff | Staff
-202 | Staff1 | Staff1 | staff
-203 | staff3 | staff | staff
+ID: 200 | Username: HeadAdmin | Password: HeadAdminPass | Role: admin
+ID: 202 | Username: Staff1 | Password: Staff1 | Role: staff
+ID: 203 | Username: staff3 | Password: staff | Role: staff

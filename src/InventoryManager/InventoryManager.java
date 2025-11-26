@@ -1,6 +1,7 @@
 package InventoryManager;
 
 import java.text.NumberFormat;
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.TreeMap;
 import java.util.Scanner;
@@ -68,14 +69,15 @@ public class InventoryManager {
     }
 
     public void RemoveItems(int id) {
-        Items itemToDelete = inventory.remove(id);
+            Items itemToDelete = inventory.remove(id);
 
-        if (itemToDelete != null) {
-            System.out.println("Item removed Successfully: " + itemToDelete.getItemName());
-            SaveToFile();
-        } else {
-            System.out.println("Item removal failed: ID " + id + " not found.");
-        }
+            if (itemToDelete != null) {
+                System.out.println("Item removed Successfully: " + itemToDelete.getItemName());
+                SaveToFile();
+            } else {
+                System.out.println("Item removal failed: ID " + id + " not found.");
+            }
+
     }
 
     public void SearchElementById(int id) {

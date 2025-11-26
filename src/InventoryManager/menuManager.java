@@ -159,15 +159,32 @@ public class menuManager {
                 }
                 case 5 -> manageInventory.AddItems();
                 case 6 -> {
+                    manageInventory.DisplayItems();
+                    try {
 
-                    System.out.println("Enter an item ID to be DELETED");
-                    int id = sc.nextInt();
-                    manageInventory.RemoveItems(id);
+                        System.out.println("Enter an item ID to be DELETED");
+                        int id = sc.nextInt();
+                        manageInventory.RemoveItems(id);
+
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input");
+                        sc.nextLine();
+                    } catch (Exception e) {
+                        System.out.println("Exception has occur: " + e.getMessage());
+                    }
                 }
                 case 7 -> {
+                    try {
+
+
                     System.out.println("Enter an ID to search for an ITEM");
                     int id = sc.nextInt();
                     manageInventory.SearchElementById(id);
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input");
+                    } catch (Exception e) {
+                        System.out.println("Exception has occur: " + e.getMessage());
+                    }
                 }
                 case 8 -> {
                     System.out.println("Enter an KEYWORD to search for an ITEM");
@@ -251,17 +268,23 @@ public class menuManager {
         int staffChoice;
 
         while (isStaffMenuRunning) {
-            System.out.println("""
-                    
-                    === STAFF MENU ===\
-                    
-                    [1]. View Items
-                    [2]. Edit items (to be approved by admin)
-                    [3]. LOGOUT
-                    [0]. EXIT""");
-            staffChoice = sc.nextInt();
-            sc.nextLine();
+            try {
 
+                System.out.println("""
+                        
+                        === STAFF MENU ===\
+                        
+                        [1]. View Items
+                        [2]. Edit items (to be approved by admin)
+                        [3]. LOGOUT
+                        [0]. EXIT""");
+                staffChoice = sc.nextInt();
+                sc.nextLine();
+            } catch (InputMismatchException e) {
+                Thread.currentThread().interrupt();
+                System.out.println("Invalid Input");
+                break;
+            }
             switch (staffChoice) {
                 case 1 -> {
                     System.out.println("============= INVENTORY ITEM LIST'S =============");
@@ -275,33 +298,40 @@ public class menuManager {
                         System.out.println("Inventory is EMPTY no ITEM to EDIT");
                         return;
                     }
-                    System.out.println("Enter Item ID to edit");
-                    int itemId = sc.nextInt();
-                    String itemName = inventoryManager.getItemName(itemId);
+                    try {
 
-                    if (itemName == null || itemName.isEmpty()) {
-                        System.out.println("Error: the entered Item ID was ot found or is invalid");
-                        break;
-                    }
-                    System.out.println("Enter the new PRICE of the ITEM");
-                    double proposedPrice = sc.nextDouble();
-                    sc.nextLine();
+                        System.out.println("Enter Item ID to edit");
+                        int itemId = sc.nextInt();
+                        String itemName = inventoryManager.getItemName(itemId);
 
-                    System.out.println("Enter the reason of Change");
-                    String reason = sc.nextLine();
-
-                    Request request = new Request(itemName, proposedPrice, reason);
-                    staffRequestManager.submitRequest(request);
-                    System.out.println("Submitting request");
-                    for (int i = 0; i < 4; i++) {
-                        try {
-                            Thread.sleep(200);
-                            System.out.print(".");
-                        } catch (InterruptedException e) {
-                            Thread.currentThread().interrupt();
+                        if (itemName == null || itemName.isEmpty()) {
+                            System.out.println("Error: the entered Item ID was ot found or is invalid");
+                            break;
                         }
-                    }
+                        System.out.println("Enter the new PRICE of the ITEM");
+                        double proposedPrice = sc.nextDouble();
+                        sc.nextLine();
 
+                        System.out.println("Enter the reason of Change");
+                        String reason = sc.nextLine();
+
+                        Request request = new Request(itemName, proposedPrice, reason);
+                        staffRequestManager.submitRequest(request);
+                        System.out.println("Submitting request");
+                        for (int i = 0; i < 4; i++) {
+                            try {
+                                Thread.sleep(200);
+                                System.out.print(".");
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
+                        }
+
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input");
+                    } catch (Exception e) {
+                        System.out.println("Exception has occur: " + e.getMessage());
+                    }
 
                 }
                 case 3 -> {
@@ -336,7 +366,7 @@ public class menuManager {
 
                 }
                 default -> {
-                    System.out.println("Error detected, please try again.");
+                    System.out.println("Invalid Choices, please try again.");
 
                     try {
                         for (int i = 0; i < 5; i++) {
@@ -346,7 +376,7 @@ public class menuManager {
 
                         } catch (InterruptedException e){
                         Thread.currentThread().interrupt();
-                        System.out.println("Error occured." + e.getMessage());
+                        System.out.println("Error occurred." + e.getMessage());
                     }
                 }
 
