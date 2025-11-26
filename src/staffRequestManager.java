@@ -11,7 +11,6 @@ public class staffRequestManager {
     }
 
     public void submitRequest(Request request) {
-        // Price change
         requests.add(request);
         System.out.println("Request sent!");
         saveToFile();
@@ -44,7 +43,6 @@ public class staffRequestManager {
             System.out.println(priceChange);
 
 
-            //For admin
             System.out.println("Approve or decline this request? (Accepted or Rejected)");
             String decision = sc.nextLine().trim();
 
@@ -67,7 +65,6 @@ public class staffRequestManager {
         return true;
     }
 
-    // write files here
     public void saveToFile() {
 
         String filePath = "NotepadDatabase\\request.txt";
@@ -92,7 +89,6 @@ public class staffRequestManager {
 
     }
 
-    // load files here
     public void loadFromFile() {
         try (BufferedReader dataReader = new BufferedReader(new FileReader("NotepadDatabase\\request.txt"))) {
             String line;

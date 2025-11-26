@@ -121,7 +121,6 @@ public class InventoryManager {
         return "";
     }
 
-    // WRITE FILES
     public void SaveToFile() {
         String filePath = "NotepadDatabase\\" + FILE_NAME;
         File file = new File(filePath);
@@ -133,7 +132,6 @@ public class InventoryManager {
             }
         }
 
-        // FIX: Write to the correct file path (using 'file' object)
         try (BufferedWriter dataWriter = new BufferedWriter(new FileWriter(file))) {
             for (Items item : inventory.values()) {
                 dataWriter.write(item.toString());
@@ -144,15 +142,13 @@ public class InventoryManager {
         }
     }
 
-    // LOAD FILES
     public void loadFromFile() {
-        // FIX: Read from the correct file path
         try (BufferedReader dataReader = new BufferedReader(new FileReader("NotepadDatabase\\" + FILE_NAME))) {
             String line;
             while ((line = dataReader.readLine()) != null) {
-                if (line.trim().isEmpty()) continue; // Skip empty lines
+                if (line.trim().isEmpty()) continue;
                 try {
-                    Items item = Items.fromFile(line); // Requires Items.fromFile(String) to be correct
+                    Items item = Items.fromFile(line);
                     inventory.put(item.getItemId(), item);
                 } catch (Exception e) {
                     System.err.println("Skipping invalid item line during load: " + line + " Error: " + e.getMessage());
