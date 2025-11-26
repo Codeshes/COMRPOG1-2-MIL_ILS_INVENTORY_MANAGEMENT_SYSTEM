@@ -1,3 +1,5 @@
+package InventoryManager;
+
 public class Admin {
     public boolean reviewRequest(String decision) {
 

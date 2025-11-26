@@ -1,3 +1,5 @@
+package InventoryManager;
+
 public class Request {
     private static int counter = 100;
     private final int id;

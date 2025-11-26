@@ -1,3 +1,5 @@
+package InventoryManager;
+
 import java.io.*;
 import java.util.LinkedHashMap;
 

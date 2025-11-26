@@ -1,5 +1,4 @@
-import java.util.Collections;
-import java.util.Comparator;
+package InventoryManager;
 
 public class Items {
     protected static int counterItemId = 100;

@@ -1,3 +1,5 @@
+package InventoryManager;
+
 public class User {
     protected static int counterUserId = 200;
     protected final int userId;
