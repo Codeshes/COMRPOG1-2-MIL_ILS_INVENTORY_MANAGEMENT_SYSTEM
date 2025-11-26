@@ -46,11 +46,11 @@ public class Request {
         String[] p = line.split("\\|");
 
         int rid = Integer.parseInt(p[0].replace("RID:", "").trim());
-        int iid = Integer.parseInt(p[1].replace("IID:", "").trim());
+        int id = Integer.parseInt(p[1].replace("ID:", "").trim());
         String itemName = p[2].replace("Item:", "").trim();
         double price = Double.parseDouble(p[3].replace("Price:", "").trim());
         String reason = p[4].replace("Reason:", "").trim();
 
-        return new Request(rid, iid, itemName, price, reason);
+        return new Request(rid, id, itemName, price, reason);
     }
 }
