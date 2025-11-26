@@ -19,15 +19,17 @@ public class menuManager {
     public void menuStart() {
 
         while (signupPageRunning) {
-            System.out.println("""
+
+            boolean isValid = false;
+            while (!isValid) {
+                try {
+                    System.out.println("""
                     
                     === SIGN UP PAGE ===
                         [1]. Login
                         [0]. EXIT  \s""");
-            boolean isValid = false;
-            while (!isValid) {
-                try {
-                    System.out.println("====== ENTER YOUR CREDENTIALS ======");
+
+                    System.out.println("====== ENTER YOUR CHOICE ======");
                     System.out.print("Enter your choice: ");
                     choice = sc.nextInt();
                     sc.nextLine();
@@ -41,13 +43,15 @@ public class menuManager {
             }
             switch (choice) {
                 case 1 -> {
-
+                    System.out.println("====== ENTER YOUR CREDENTIALS ======");
                     System.out.print("Enter your username: ");
                     String userName = sc.nextLine();
 
                     System.out.print("Enter your password: ");
                     String userPassword = sc.nextLine();
+                    System.out.println("====================================");
                     String role = manageUser.loginMethod(userName, userPassword);
+
 
                     if (role.equals("admin")) {
                         adminMenu(manageUser, manager);
