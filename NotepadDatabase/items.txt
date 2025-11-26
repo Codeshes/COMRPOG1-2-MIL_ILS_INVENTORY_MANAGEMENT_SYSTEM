@@ -1,4 +1,4 @@
-ID: 100| Item name: Choco| Item Price: 19000.0| Item Quantity: 55
+ID: 100 | Item name: Choco | Item Price: 19000.0 | Item Quantity: 55
 ID: 101| Item name: PC| Item Price: 29000.0| Item Quantity: 10
 ID: 102| Item name: Water Bottle| Item Price: 25.0| Item Quantity: 120
 ID: 103| Item name: Soda Can| Item Price: 35.0| Item Quantity: 80
