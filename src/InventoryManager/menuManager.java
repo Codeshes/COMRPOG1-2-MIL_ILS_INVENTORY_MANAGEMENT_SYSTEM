@@ -149,9 +149,16 @@ public class menuManager {
                     userManager.displayUser();
                 }
                 case 3 -> {
-                    System.out.println("Enter a username to remove in the user's List");
-                    String user = sc.nextLine();
-                    userManager.removeUser(user);
+                    userManager.displayUser();
+                    try {
+                        System.out.println("Enter a user ID to remove in the user's List");
+                        int id = sc.nextInt();
+                        userManager.removeUser(id);
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid input");
+                    } catch (Exception e) {
+                        System.out.println("Exception has occur: " + e.getMessage());
+                    }
                 }
                 case 4 -> {
                     System.out.println("============= INVENTORY ITEM LIST'S =============");
@@ -213,18 +220,20 @@ public class menuManager {
 
                 case 11 -> {
                     System.out.println("Logging out");
+                    try {
                     for (int i = 0; i < 5; i++) {
-                        try {
+
                             Thread.sleep(200);
                             System.out.print(".");
-                            isAdminMenuRunning = false;
+                    }
+                        isAdminMenuRunning = false;
                         } catch (InterruptedException e) {
                             Thread.currentThread().interrupt();
                             System.out.println("Interrupted");
                             isAdminMenuRunning = false;
                         }
                     }
-                }
+
                 case 0 -> {
                     try {
                         System.out.print("Exiting Program");
@@ -236,12 +245,12 @@ public class menuManager {
                         System.exit(0);
                     } catch (InterruptedException e) {
                         Thread.currentThread().interrupt();
-                        System.exit(0);
                         isAdminMenuRunning = false;
+                        System.exit(0);
                     }
                 }
                 default -> {
-                    System.out.println("Error detected.");
+                    System.out.println("Invalid input.");
 
                     try {
                         for (int i = 0; i < 4; i++) {
@@ -249,7 +258,7 @@ public class menuManager {
                             System.out.println(".");
                         }
 
-                        }catch (InterruptedException e) {
+                        } catch (InterruptedException e) {
                             Thread.currentThread().interrupt();
                             System.out.println(".");
                         }
