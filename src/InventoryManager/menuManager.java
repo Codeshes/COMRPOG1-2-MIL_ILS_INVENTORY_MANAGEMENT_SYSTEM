@@ -231,8 +231,9 @@ public class menuManager {
                         isAdminMenuRunning = false;
                         } catch (InterruptedException e) {
                             Thread.currentThread().interrupt();
-                            System.out.println("Interrupted");
                             isAdminMenuRunning = false;
+                            System.out.println("Interrupted");
+
                         }
                     }
 
@@ -287,7 +288,8 @@ public class menuManager {
                         
                         [1]. View Items
                         [2]. Edit items (to be approved by admin)
-                        [3]. LOGOUT
+                        [3]. View pending request
+                        [4]. LOGOUT
                         [0]. EXIT""");
                 staffChoice = sc.nextInt();
                 sc.nextLine();
@@ -326,16 +328,18 @@ public class menuManager {
                         System.out.println("Enter the reason of Change");
                         String reason = sc.nextLine();
 
-                        Request request = new Request(itemName, proposedPrice, reason);
+                        Request request = new Request(itemId, itemName, proposedPrice, reason);
+
                         staffRequestManager.submitRequest(request);
                         System.out.println("Submitting request");
+                        try {
                         for (int i = 0; i < 4; i++) {
-                            try {
+
                                 Thread.sleep(200);
                                 System.out.print(".");
-                            } catch (InterruptedException e) {
-                                Thread.currentThread().interrupt();
                             }
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
                         }
 
                     } catch (InputMismatchException e) {
@@ -347,6 +351,12 @@ public class menuManager {
 
                 }
                 case 3 -> {
+                    /*
+                    This block of code is for view pending request
+                     */
+                    staffRequestManager.viewRequest();
+                }
+                case 4 -> {
                     System.out.println("Logging out");
                     for (int i = 0; i < 5; i++) {
                         try {

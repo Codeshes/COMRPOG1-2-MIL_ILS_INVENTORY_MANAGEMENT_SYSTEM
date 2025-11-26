@@ -30,7 +30,7 @@ public class staffRequestManager {
 
         for (Request request : requests) {
             System.out.printf("%-5d %-9s %-15.2f %-20s%n",
-                    request.getId(),
+                    request.getRequestId(),
                     request.getItemName(),
                     request.getProposedPrice(),
                     request.getReason());
@@ -38,27 +38,49 @@ public class staffRequestManager {
 
     }
 
+    public void pendingRequest() {
+        if (requests.isEmpty()) {
+            System.out.println("There are no Pending request Today");
+        }
+        System.out.println("========================================");
+        System.out.printf("%-5s %-15s %-15s %-25s",
+                "ID", "Item", "Proposed Price", "Reason");
+        System.out.println("========================================");
+
+        for (Request request : requests) {
+            System.out.printf("%-5d %-15s %-15.2f %-25s",
+                    request.getRequestId(),
+                    request.getItemName(),
+                    request.getProposedPrice(),
+                    request.getReason());
+        }
+    }
+
     public void processRequest(Admin admin, InventoryManager managerInventory) {
         Scanner sc = new Scanner(System.in);
-        for (Request priceChange : requests) {
-            System.out.println("Processing request ID " + priceChange.getId());
-            System.out.println(priceChange);
+        for (Request req : requests) {
 
+            System.out.println("Processing Request:");
+            System.out.println("Request ID: " + req.getRequestId());
+            System.out.println("Item: " + req.getItemName());
+            System.out.println("Proposed Price: " + req.getProposedPrice());
+            System.out.println("Reason: " + req.getReason());
 
-            System.out.println("Approve or decline this request? (Accepted or Rejected)");
+            System.out.print("Approve or Reject? (Accepted/Rejected): ");
             String decision = sc.nextLine().trim();
 
-            boolean ifApproved = admin.reviewRequest(decision);
-            if (ifApproved) {
-                System.out.println("Ticket Approved! " + priceChange.getId() + " " + decision);
-            } else {
-                System.out.println("Ticket not Approved! " + priceChange.getId() + " " + decision);
-            }
-            managerInventory.updateItem(priceChange.getId(), priceChange.getProposedPrice());
-            saveToFile();
+            boolean approved = admin.reviewRequest(decision);
 
+            if (approved) {
+                managerInventory.updateItem(req.getItemId(), req.getProposedPrice());
+                System.out.println("Item price updated successfully!");
+            } else {
+                System.out.println("Request rejected.");
+            }
         }
+
         requests.clear();
+        saveToFile();
     }
 
     public boolean updatedItemPrice(Request priceChange) {

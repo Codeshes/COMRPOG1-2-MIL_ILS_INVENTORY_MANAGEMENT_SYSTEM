@@ -2,59 +2,55 @@ package InventoryManager;
 
 public class Request {
     private static int counter = 100;
-    private final int id;
+    private final int requestId;
+    private final int itemId;
     private final String itemName;
-    private double proposedPrice;
+    private final double proposedPrice;
     private final String reason;
 
-
-    Request(String itemName, double proposedPrice, String reason) {
-        this.id = counter++;
+    public Request(int itemId, String itemName, double proposedPrice, String reason) {
+        this.requestId = counter++;
+        this.itemId = itemId;
         this.itemName = itemName;
         this.proposedPrice = proposedPrice;
         this.reason = reason;
     }
 
-    Request (int id, String itemName, double proposedPrice, String reason ) {
-        this.id = id;
+    public Request(int requestId, int itemId, String itemName, double proposedPrice, String reason) {
+        this.requestId = requestId;
+        this.itemId = itemId;
         this.itemName = itemName;
         this.proposedPrice = proposedPrice;
         this.reason = reason;
-
-        if (id >= counter) counter = id + 1;
-
+        if (requestId >= counter) counter = requestId + 1;
     }
 
-    public int getId() { return  id; }
+
+    public int getRequestId() { return requestId; }
+    public int getItemId() { return itemId; }
     public String getItemName() { return itemName; }
     public double getProposedPrice() { return proposedPrice; }
-    public String getReason() { return reason;}
+    public String getReason() { return reason; }
 
-    public void setProposedPrice(double proposedPrice) { this.proposedPrice = proposedPrice; }
 
     @Override
     public String toString() {
-        return "ID:" + id +
-                "|Item name:" + itemName +
-                "|Proposed Price: " + proposedPrice +
-                "|REASON:" + reason;
-
+        return "RID:" + requestId +
+                "|ID:" + itemId +
+                "|Item:" + itemName +
+                "|Price:" + proposedPrice +
+                "|Reason:" + reason;
     }
 
     public static Request fromFile(String line) {
         String[] p = line.split("\\|");
 
-        if (p.length != 4){
-            throw new IllegalArgumentException("Invalid user data format: " + line);
-        }
+        int rid = Integer.parseInt(p[0].replace("RID:", "").trim());
+        int iid = Integer.parseInt(p[1].replace("IID:", "").trim());
+        String itemName = p[2].replace("Item:", "").trim();
+        double price = Double.parseDouble(p[3].replace("Price:", "").trim());
+        String reason = p[4].replace("Reason:", "").trim();
 
-            int itemId = Integer.parseInt(p[0].replace("ID:", "").trim());
-            String itemNAME = p[1].replace("Item name:", "").trim();
-            double proposedPrices = Double.parseDouble(p[2].replace("Proposed Price: ", "").trim());
-            String reason = p[3].replace("REASON:", "").trim();
-
-
-            return  new Request(itemId, itemNAME, proposedPrices, reason);
+        return new Request(rid, iid, itemName, price, reason);
     }
-
 }

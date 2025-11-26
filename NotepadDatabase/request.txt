@@ -1,2 +1,0 @@
-ID:100|Item name:Choco|Proposed Price: 19000.0|REASON:Deflation
-ID:101|Item name:PC|Proposed Price: 29000.0|REASON:Inflation
