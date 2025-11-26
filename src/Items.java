@@ -39,9 +39,9 @@ public class Items {
 
     @Override
     public String toString() {
-        return "ID: " + itemId + "|" +
-                " Item name: " + itemName + "|" +
-                " Item Price: " + itemPrice + "|" +
+        return "ID: " + itemId + " | " +
+                " Item name: " + itemName + " | " +
+                " Item Price: " + itemPrice + " | " +
                 " Item Quantity: " + itemQuantity;
     }
 
