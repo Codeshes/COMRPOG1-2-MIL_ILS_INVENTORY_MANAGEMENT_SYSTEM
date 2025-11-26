@@ -109,6 +109,7 @@ public class menuManager {
     public void adminMenu(UserManager userManager, InventoryManager manageInventory) {
         int choice;
         while (isAdminMenuRunning) {
+            try {
             System.out.println("""
                     ==================== ADMIN MENU ====================
                     [1]  Add Users
@@ -129,7 +130,7 @@ public class menuManager {
                     [0]  Exit
                     =====================================================
                     """);
-            try {
+
                 System.out.print("\nEnter your choice: ");
                 choice = sc.nextInt();
                 sc.nextLine();
