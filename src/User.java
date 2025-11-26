@@ -33,21 +33,27 @@ public class User {
     @Override
 
     public String toString() {
-        return userId + "," + userName + "," + userPassword + "," + role;
+        return "ID: " + userId + " | " +
+                "Username: " + userName + " | " +
+                "Password: " + userPassword + " | " +
+                "Role: " + role;
+
+        //return userId + "," + userName + "," + userPassword + "," + role;
     }
 
     public static User fromFile(String line) {
-        String[] p = line.split(",");
+        String[] p = line.split("\\|");
 
         if (p.length != 4) {
             throw new IllegalArgumentException("Invalid user data format: " + line);
         }
 
-        return new User (
-            Integer.parseInt(p[0].trim()),
-            p[1],
-            p[2],
-            p[3]
-        );
+
+            int id = Integer.parseInt(p[0].replace("ID:", "").trim());
+            String userName = p[1].replace("Username:", "").trim();
+            String userPassword = p[2].replace("Password: ", "").trim();
+            String role = p[3].replace("Role:", "").trim();
+
+            return new User(id, userName, userPassword, role);
     }
 }
