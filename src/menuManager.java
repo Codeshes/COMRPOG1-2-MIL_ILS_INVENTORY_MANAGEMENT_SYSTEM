@@ -12,11 +12,6 @@ public class menuManager {
     int choice;
 
 
-
-
-    //utility class for input
-
-
     boolean signupPageRunning = true;
 
     public void menuStart() {
@@ -44,19 +39,14 @@ public class menuManager {
             }
             switch (choice) {
                 case 1 -> {
-                    // ask for username
+
                     System.out.print("Enter your username: ");
                     String userName = sc.nextLine();
-                    // ask for userPassword
+
                     System.out.print("Enter your password: ");
                     String userPassword = sc.nextLine();
                     String role = manageUser.loginMethod(userName, userPassword);
 
-                    /* if role equals to admin it redirect into adminMenu() and isAdminMenuRunning redirect it
-                    * again when logging in again after log out.
-                    *
-                    * Same as Staff
-                    * */
                     if (role.equals("admin")) {
                         adminMenu(manageUser, manager);
                         isAdminMenuRunning = true;
@@ -102,8 +92,7 @@ public class menuManager {
         }
     }
 
-    /*===================================================================================*/
-    // Used in loop
+
     boolean isAdminMenuRunning = true;
 
     public void adminMenu(UserManager userManager, InventoryManager manageInventory) {
@@ -153,23 +142,22 @@ public class menuManager {
                     userManager.addUserByAdmin(userName, userPassword, role);
 
                 }
-                case 2 -> { // display the user list
+                case 2 -> {
                     System.out.println("============= USER'S LIST =============");
                     userManager.displayUser();
                 }
                 case 3 -> {
-                    // String remove method
                     System.out.println("Enter a username to remove in the user's List");
                     String user = sc.nextLine();
                     userManager.removeUser(user);
                 }
-                case 4 -> { // Display all the items
+                case 4 -> {
                     System.out.println("============= INVENTORY ITEM LIST'S =============");
                     manageInventory.DisplayItems();
                 }
                 case 5 -> manageInventory.AddItems();
                 case 6 -> {
-                    // delete item via ID
+
                     System.out.println("Enter an item ID to be DELETED");
                     int id = sc.nextInt();
                     manageInventory.RemoveItems(id);
@@ -180,19 +168,15 @@ public class menuManager {
                     manageInventory.SearchElementById(id);
                 }
                 case 8 -> {
-                    // search via keyword
                     System.out.println("Enter an KEYWORD to search for an ITEM");
                     String keyword = sc.nextLine();
                     manageInventory.SearchElementByKeyword(keyword);
                 }
                 case 9 ->
-                    // view request
                     requestManager.viewRequest();
 
                 case 10 -> {
-                    // object declaration of admin for the decision of an admin into a one request.
                     Admin admin = new Admin();
-                    // process method for the admin.
                     requestManager.processRequest(admin, manager);
 
 
@@ -287,10 +271,8 @@ public class menuManager {
 
                     if (inventoryManager.isEmpty()) {
                         System.out.println("Inventory is EMPTY no ITEM to EDIT");
-                        // return if the inventory are empty
                         return;
                     }
-                        // if not it bypasses the if statement and go direct into the userInput
                     System.out.println("Enter Item ID to edit");
                     int itemId = sc.nextInt();
                     String itemName = inventoryManager.getItemName(itemId);
