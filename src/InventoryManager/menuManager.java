@@ -284,13 +284,15 @@ public class menuManager {
 
                 System.out.println("""
                         
-                        === STAFF MENU ===\
+                        ===================== STAFF MENU =====================
                         
                         [1]. View Items
                         [2]. Edit items (to be approved by admin)
                         [3]. View pending request
                         [4]. LOGOUT
-                        [0]. EXIT""");
+                        [0]. EXIT
+                        ======================================================""");
+
                 staffChoice = sc.nextInt();
                 sc.nextLine();
             } catch (InputMismatchException e) {

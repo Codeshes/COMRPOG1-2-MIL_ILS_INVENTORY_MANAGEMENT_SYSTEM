@@ -21,7 +21,8 @@ public class staffRequestManager {
     public void viewRequest() {
 
         if (requests.isEmpty()) {
-            System.out.println("There are no request today");
+            System.out.println("\nThere are no request today");
+            return;
         }
         System.out.println("========================================");
         System.out.printf("%-5s %-10s  %-15s %-20s%n",
@@ -40,7 +41,8 @@ public class staffRequestManager {
 
     public void pendingRequest() {
         if (requests.isEmpty()) {
-            System.out.println("There are no pending request today");
+            System.out.println("\nThere are no pending request today");
+            return;
         }
         System.out.println("========================================");
         System.out.printf("%-5s %-10s  %-15s %-20s%n",
