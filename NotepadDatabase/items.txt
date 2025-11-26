@@ -1,52 +1,52 @@
 ID: 100 | Item name: Choco | Item Price: 19000.0 | Item Quantity: 55
-ID: 101| Item name: PC| Item Price: 29000.0| Item Quantity: 10
-ID: 102| Item name: Water Bottle| Item Price: 25.0| Item Quantity: 120
-ID: 103| Item name: Soda Can| Item Price: 35.0| Item Quantity: 80
-ID: 104| Item name: Rice 1kg| Item Price: 55.0| Item Quantity: 200
-ID: 105| Item name: Sugar 1kg| Item Price: 70.0| Item Quantity: 90
-ID: 106| Item name: Coffee Mix| Item Price: 10.0| Item Quantity: 300
-ID: 107| Item name: Instant Noodles| Item Price: 16.0| Item Quantity: 250
-ID: 108| Item name: Shampoo Sachet| Item Price: 12.0| Item Quantity: 400
-ID: 109| Item name: Soap Bar| Item Price: 32.0| Item Quantity: 100
-ID: 110| Item name: Toothpaste| Item Price: 55.0| Item Quantity: 75
-ID: 111| Item name: Tissue Roll| Item Price: 20.0| Item Quantity: 150
-ID: 112| Item name: Milk Powder| Item Price: 180.0| Item Quantity: 50
-ID: 113| Item name: Eggs Tray| Item Price: 190.0| Item Quantity: 40
-ID: 114| Item name: Hotdog Pack| Item Price: 120.0| Item Quantity: 60
-ID: 115| Item name: Bread Loaf| Item Price: 65.0| Item Quantity: 70
-ID: 116| Item name: Cheese| Item Price: 95.0| Item Quantity: 35
-ID: 117| Item name: Butter| Item Price: 85.0| Item Quantity: 40
-ID: 118| Item name: Cooking Oil 1L| Item Price: 110.0| Item Quantity: 90
-ID: 119| Item name: Vinegar| Item Price: 25.0| Item Quantity: 120
-ID: 120| Item name: Soy Sauce| Item Price: 30.0| Item Quantity: 140
-ID: 121| Item name: Detergent Powder| Item Price: 48.0| Item Quantity: 130
-ID: 122| Item name: Fabric Softener| Item Price: 32.0| Item Quantity: 110
-ID: 123| Item name: Dishwashing Liquid| Item Price: 55.0| Item Quantity: 80
-ID: 124| Item name: Mop| Item Price: 120.0| Item Quantity: 30
-ID: 125| Item name: Broom| Item Price: 60.0| Item Quantity: 50
-ID: 126| Item name: Dustpan| Item Price: 35.0| Item Quantity: 45
-ID: 127| Item name: Ballpen| Item Price: 10.0| Item Quantity: 300
-ID: 128| Item name: Notebook| Item Price: 25.0| Item Quantity: 200
-ID: 129| Item name: Bond Paper 1 Ream| Item Price: 90.0| Item Quantity: 40
-ID: 130| Item name: Marker Pen| Item Price: 18.0| Item Quantity: 180
-ID: 131| Item name: Envelope| Item Price: 3.0| Item Quantity: 500
-ID: 132| Item name: Flashlight| Item Price: 150.0| Item Quantity: 30
-ID: 133| Item name: Batteries AA| Item Price: 45.0| Item Quantity: 80
-ID: 134| Item name: Extension Cord| Item Price: 180.0| Item Quantity: 25
-ID: 135| Item name: USB Cable| Item Price: 60.0| Item Quantity: 90
-ID: 136| Item name: Phone Charger| Item Price: 180.0| Item Quantity: 45
-ID: 137| Item name: Earphones| Item Price: 120.0| Item Quantity: 35
-ID: 138| Item name: Powerbank| Item Price: 450.0| Item Quantity: 20
-ID: 139| Item name: Mouse| Item Price: 160.0| Item Quantity: 40
-ID: 140| Item name: Keyboard| Item Price: 320.0| Item Quantity: 25
-ID: 141| Item name: USB Flash Drive 32GB| Item Price: 250.0| Item Quantity: 30
-ID: 142| Item name: HDMI Cable| Item Price: 140.0| Item Quantity: 30
-ID: 143| Item name: Light Bulb| Item Price: 45.0| Item Quantity: 60
-ID: 144| Item name: Screwdriver Set| Item Price: 110.0| Item Quantity: 20
-ID: 145| Item name: Hammer| Item Price: 95.0| Item Quantity: 15
-ID: 146| Item name: Nails Pack| Item Price: 25.0| Item Quantity: 200
-ID: 147| Item name: Paint Brush| Item Price: 45.0| Item Quantity: 40
-ID: 148| Item name: Umbrella| Item Price: 180.0| Item Quantity: 30
-ID: 149| Item name: Slippers| Item Price: 65.0| Item Quantity: 50
-ID: 150| Item name: T-shirt| Item Price: 120.0| Item Quantity: 60
-ID: 151| Item name: Alcohol 70%| Item Price: 45.0| Item Quantity: 90
+ID: 101 | Item name: PC | Item Price: 29000.0 | Item Quantity: 10
+ID: 102 | Item name: Water Bottle | Item Price: 25.0 | Item Quantity: 120
+ID: 103 | Item name: Soda Can | Item Price: 35.0 | Item Quantity: 80
+ID: 104 | Item name: Rice 1kg | Item Price: 55.0 | Item Quantity: 200
+ID: 105 | Item name: Sugar 1kg | Item Price: 70.0 | Item Quantity: 90
+ID: 106 | Item name: Coffee Mix | Item Price: 10.0 | Item Quantity: 300
+ID: 107 | Item name: Instant Noodles | Item Price: 16.0 | Item Quantity: 250
+ID: 108 | Item name: Shampoo Sachet | Item Price: 12.0 | Item Quantity: 400
+ID: 109 | Item name: Soap Bar | Item Price: 32.0 | Item Quantity: 100
+ID: 110 | Item name: Toothpaste | Item Price: 55.0 | Item Quantity: 75
+ID: 111 | Item name: Tissue Roll | Item Price: 20.0 | Item Quantity: 150
+ID: 112 | Item name: Milk Powder | Item Price: 180.0 | Item Quantity: 50
+ID: 113 | Item name: Eggs Tray | Item Price: 190.0 | Item Quantity: 40
+ID: 114 | Item name: Hotdog Pack | Item Price: 120.0 | Item Quantity: 60
+ID: 115 | Item name: Bread Loaf | Item Price: 65.0 | Item Quantity: 70
+ID: 116 | Item name: Cheese | Item Price: 95.0 | Item Quantity: 35
+ID: 117 | Item name: Butter | Item Price: 85.0 | Item Quantity: 40
+ID: 118 | Item name: Cooking Oil 1L | Item Price: 110.0 | Item Quantity: 90
+ID: 119 | Item name: Vinegar | Item Price: 25.0 | Item Quantity: 120
+ID: 120 | Item name: Soy Sauce | Item Price: 30.0 | Item Quantity: 140
+ID: 121 | Item name: Detergent Powder | Item Price: 48.0 | Item Quantity: 130
+ID: 122 | Item name: Fabric Softener | Item Price: 32.0 | Item Quantity: 110
+ID: 123 | Item name: Dishwashing Liquid | Item Price: 55.0 | Item Quantity: 80
+ID: 124 | Item name: Mop | Item Price: 120.0 | Item Quantity: 30
+ID: 125 | Item name: Broom | Item Price: 60.0 | Item Quantity: 50
+ID: 126 | Item name: Dustpan | Item Price: 35.0 | Item Quantity: 45
+ID: 127 | Item name: Ballpen | Item Price: 10.0 | Item Quantity: 300
+ID: 128 | Item name: Notebook | Item Price: 25.0 | Item Quantity: 200
+ID: 129 | Item name: Bond Paper 1 Ream | Item Price: 90.0 | Item Quantity: 40
+ID: 130 | Item name: Marker Pen | Item Price: 18.0 | Item Quantity: 180
+ID: 131 | Item name: Envelope | Item Price: 3.0 | Item Quantity: 500
+ID: 132 | Item name: Flashlight | Item Price: 150.0 | Item Quantity: 30
+ID: 133 | Item name: Batteries AA | Item Price: 45.0 | Item Quantity: 80
+ID: 134 | Item name: Extension Cord | Item Price: 180.0 | Item Quantity: 25
+ID: 135 | Item name: USB Cable | Item Price: 60.0 | Item Quantity: 90
+ID: 136 | Item name: Phone Charger | Item Price: 180.0 | Item Quantity: 45
+ID: 137 | Item name: Earphones | Item Price: 120.0 | Item Quantity: 35
+ID: 138 | Item name: Powerbank | Item Price: 450.0 | Item Quantity: 20
+ID: 139 | Item name: Mouse | Item Price: 160.0 | Item Quantity: 40
+ID: 140 | Item name: Keyboard | Item Price: 320.0 | Item Quantity: 25
+ID: 141 | Item name: USB Flash Drive 32GB | Item Price: 250.0| Item Quantity: 30
+ID: 142 | Item name: HDMI Cable | Item Price: 140.0 | Item Quantity: 30
+ID: 143 | Item name: Light Bulb | Item Price: 45.0 | Item Quantity: 60
+ID: 144 | Item name: Screwdriver Set | Item Price: 110.0 | Item Quantity: 20
+ID: 145 | Item name: Hammer | Item Price: 95.0 | Item Quantity: 15
+ID: 146 | Item name: Nails Pack | Item Price: 25.0 | Item Quantity: 200
+ID: 147 | Item name: Paint Brush | Item Price: 45.0 | Item Quantity: 40
+ID: 148 | Item name: Umbrella | Item Price: 180.0 | Item Quantity: 30
+ID: 149 | Item name: Slippers | Item Price: 65.0 | Item Quantity: 50
+ID: 150 | Item name: T-shirt | Item Price: 120.0 | Item Quantity: 60
+ID: 151 | Item name: Alcohol 70% | Item Price: 45.0 | Item Quantity: 90
