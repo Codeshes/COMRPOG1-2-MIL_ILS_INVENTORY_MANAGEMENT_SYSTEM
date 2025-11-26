@@ -1,10 +1,10 @@
 package InventoryManager;
 
 import java.io.*;
-import java.util.LinkedHashMap;
+import java.util.TreeMap;
 
 public class UserManager {
-    private final LinkedHashMap<String, User> users = new LinkedHashMap<>();
+    private final TreeMap<String, User> users = new TreeMap<>();
 
     UserManager() {
         loadFromFile();
