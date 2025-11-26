@@ -40,15 +40,15 @@ public class staffRequestManager {
 
     public void pendingRequest() {
         if (requests.isEmpty()) {
-            System.out.println("There are no Pending request Today");
+            System.out.println("There are no pending request today");
         }
         System.out.println("========================================");
-        System.out.printf("%-5s %-15s %-15s %-25s",
+        System.out.printf("%-5s %-10s  %-15s %-20s%n",
                 "ID", "Item", "Proposed Price", "Reason");
         System.out.println("========================================");
 
         for (Request request : requests) {
-            System.out.printf("%-5d %-15s %-15.2f %-25s",
+            System.out.printf("%-5d %-9s %-15.2f %-20s%n",
                     request.getRequestId(),
                     request.getItemName(),
                     request.getProposedPrice(),
