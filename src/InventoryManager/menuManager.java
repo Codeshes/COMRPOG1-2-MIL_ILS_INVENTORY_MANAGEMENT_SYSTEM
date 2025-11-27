@@ -24,10 +24,10 @@ public class menuManager {
             while (!isValid) {
                 try {
                     System.out.println("""
-                    
-                    === SIGN UP PAGE ===
-                        [1]. Login
-                        [0]. EXIT  \s""");
+                            
+                            === SIGN UP PAGE ===
+                                [1]. Login
+                                [0]. EXIT  \s""");
 
                     System.out.println("====== ENTER YOUR CHOICE ======");
                     System.out.print("Enter your choice: ");
@@ -105,26 +105,26 @@ public class menuManager {
         int choice;
         while (isAdminMenuRunning) {
             try {
-            System.out.println("""
-                    ==================== ADMIN MENU ====================
-                    [1]  Add Users
-                    [2]  Display Users
-                    [3]  Remove Users
-                    -----------------------------------------------------
-                             Manage Inventory Section
-                    -----------------------------------------------------
-                    [4]  View All Items
-                    [5]  Add Item
-                    [6]  Remove Item
-                    [7]  Search Item by ID
-                    [8]  Search Item by Keyword
-                    -----------------------------------------------------
-                    [9]  View Staff Requests
-                    [10] Process Request
-                    [11] Logout
-                    [0]  Exit
-                    =====================================================
-                    """);
+                System.out.println("""
+                        ==================== ADMIN MENU ====================
+                        [1]  Add Users
+                        [2]  Display Users
+                        [3]  Remove Users
+                        -----------------------------------------------------
+                                 Manage Inventory Section
+                        -----------------------------------------------------
+                        [4]  View All Items
+                        [5]  Add Item
+                        [6]  Remove Item
+                        [7]  Search Item by ID
+                        [8]  Search Item by Keyword
+                        -----------------------------------------------------
+                        [9]  View Staff Requests
+                        [10] Process Request
+                        [11] Logout
+                        [0]  Exit
+                        =====================================================
+                        """);
 
                 System.out.print("\nEnter your choice: ");
                 choice = sc.nextInt();
@@ -189,9 +189,9 @@ public class menuManager {
                     try {
 
 
-                    System.out.println("Enter an ID to search for an ITEM");
-                    int id = sc.nextInt();
-                    manageInventory.SearchElementById(id);
+                        System.out.println("Enter an ID to search for an ITEM");
+                        int id = sc.nextInt();
+                        manageInventory.SearchElementById(id);
                     } catch (InputMismatchException e) {
                         System.out.println("Invalid Input");
                         sc.nextLine();
@@ -204,8 +204,7 @@ public class menuManager {
                     String keyword = sc.nextLine();
                     manageInventory.SearchElementByKeyword(keyword);
                 }
-                case 9 ->
-                    requestManager.viewRequest();
+                case 9 -> requestManager.viewRequest();
 
                 case 10 -> {
                     Admin admin = new Admin();
@@ -227,19 +226,19 @@ public class menuManager {
                 case 11 -> {
                     System.out.print("Logging out");
                     try {
-                    for (int i = 0; i < 5; i++) {
+                        for (int i = 0; i < 5; i++) {
 
                             Thread.sleep(200);
                             System.out.print(".");
-                    }
-                        isAdminMenuRunning = false;
-                        } catch (InterruptedException e) {
-                            Thread.currentThread().interrupt();
-                            isAdminMenuRunning = false;
-                            System.out.println("Interrupted");
-
                         }
+                        isAdminMenuRunning = false;
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                        isAdminMenuRunning = false;
+                        System.out.println("Interrupted");
+
                     }
+                }
 
                 case 0 -> {
                     try {
@@ -265,16 +264,15 @@ public class menuManager {
                             System.out.println(".");
                         }
 
-                        } catch (InterruptedException e) {
-                            Thread.currentThread().interrupt();
-                            System.out.println(".");
-                        }
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                        System.out.println(".");
                     }
                 }
-
             }
-        }
 
+        }
+    }
 
 
     /*====================================================================================*/
@@ -339,7 +337,7 @@ public class menuManager {
                         staffRequestManager.submitRequest(request);
                         System.out.println("Submitting request");
                         try {
-                        for (int i = 0; i < 4; i++) {
+                            for (int i = 0; i < 4; i++) {
 
                                 Thread.sleep(200);
                                 System.out.print(".");
@@ -360,7 +358,7 @@ public class menuManager {
                     /*
                     This block of code is for view pending request
                      */
-                    staffRequestManager.pendingRequest();
+                        staffRequestManager.pendingRequest();
 
                 case 4 -> {
                     System.out.print("Logging out");
@@ -379,18 +377,18 @@ public class menuManager {
                 case 0 -> {
                     System.out.print("Exiting");
 
-                        try {
-                            for (int i = 0; i < 5; i++) {
-                                Thread.sleep(200);
-                                System.out.print(".");
-                            }
-                            System.exit(0);
-                            isStaffMenuRunning = false;
-                        } catch (InterruptedException e) {
-                            Thread.currentThread().interrupt();
-                            System.exit(0);
-                            isAdminMenuRunning = false;
+                    try {
+                        for (int i = 0; i < 5; i++) {
+                            Thread.sleep(200);
+                            System.out.print(".");
                         }
+                        System.exit(0);
+                        isStaffMenuRunning = false;
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                        System.exit(0);
+                        isAdminMenuRunning = false;
+                    }
 
                 }
                 default -> {
@@ -400,9 +398,9 @@ public class menuManager {
                         for (int i = 0; i < 5; i++) {
                             Thread.sleep(200);
                             System.out.println(".");
-                            }
+                        }
 
-                        } catch (InterruptedException e){
+                    } catch (InterruptedException e) {
                         Thread.currentThread().interrupt();
                         System.out.println("Error occurred." + e.getMessage());
                     }
