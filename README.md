@@ -33,12 +33,6 @@ A **console-based** Java project that manages inventory items, handles smart sea
    │   Approve or Deny
    │   Update Inventory
    └───────────┬────────────
-               ▼
-         ┌───────────────┐
-         │  Analytics    │
-         │  (Totals +    │
-         │   Bar Graph)  │
-         └───────────────┘
                │
                ▼
          ┌───────────────┐
@@ -65,9 +59,6 @@ A **console-based** Java project that manages inventory items, handles smart sea
 - Submit a change request (e.g., restock, price change)  
 - Track request status  
 
-### 📊 Analytics
-- Displays total stock, total inventory value  
-- Monthly stock visualization using a **text-based bar graph**  
 
 ---
 
@@ -82,7 +73,7 @@ InventorySystem/
 ├── LoginSystem.java
 ├── Request.java
 ├── RequestManager.java
-│
+│-- Admin.java
 ├── data/
 │   ├── inventory.txt
 │   ├── users.txt
@@ -119,7 +110,6 @@ All data is reloaded when the program starts using Java I/O (`BufferedReader`, `
 This project simulates a **real-world inventory management flow**:
 - Admins oversee stock and approve requests.  
 - Staff can view items and suggest updates.  
-- Analytics provide quick stock and value insights.  
 - Data is persistent using file handling.  
 
 💡 *Perfect for learning OOP, file I/O, and role-based systems in Java!*
