@@ -211,7 +211,7 @@ public class menuManager {
                     requestManager.processRequest(admin, manager);
 
 
-                    System.out.println("Returning to ADMIN MENU");
+                    System.out.print("Returning to ADMIN MENU");
                     for (int i = 0; i < 5; i++) {
                         try {
                             Thread.sleep(700);
@@ -256,7 +256,7 @@ public class menuManager {
                     }
                 }
                 default -> {
-                    System.out.println("Invalid input.");
+                    System.out.print("Invalid input.");
 
                     try {
                         for (int i = 0; i < 4; i++) {
@@ -335,7 +335,7 @@ public class menuManager {
                         Request request = new Request(itemId, itemName, proposedPrice, reason);
 
                         staffRequestManager.submitRequest(request);
-                        System.out.println("Submitting request");
+                        System.out.print("Submitting request");
                         try {
                             for (int i = 0; i < 4; i++) {
 

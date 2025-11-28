@@ -20,7 +20,7 @@ public class InventoryManager {
         String itemName = sc.nextLine();
 
         System.out.print("Enter Price: ");
-        int itemPrice = sc.nextInt();
+        double itemPrice = sc.nextDouble();
         sc.nextLine();
 
         System.out.print("Enter Item Quantity: ");

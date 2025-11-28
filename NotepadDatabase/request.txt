@@ -1,1 +1,2 @@
-RID:100|ID:142|Item:HDMI Cable|Price:150.0|Reason:price hike
+RID:100|ID:138|Item:Powerbank|Price:500.0|Reason:Inflation
+RID:101|ID:126|Item:Dustpan|Price:100.0|Reason:Price hike

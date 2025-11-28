@@ -40,7 +40,7 @@ ID: 138 |  Item name: Powerbank |  Item Price: 450.0 |  Item Quantity: 20
 ID: 139 |  Item name: Mouse |  Item Price: 160.0 |  Item Quantity: 40
 ID: 140 |  Item name: Keyboard |  Item Price: 320.0 |  Item Quantity: 25
 ID: 141 |  Item name: USB Flash Drive 32GB |  Item Price: 250.0 |  Item Quantity: 30
-ID: 142 |  Item name: HDMI Cable |  Item Price: 140.0 |  Item Quantity: 30
+ID: 142 |  Item name: HDMI Cable |  Item Price: 150.0 |  Item Quantity: 30
 ID: 143 |  Item name: Light Bulb |  Item Price: 45.0 |  Item Quantity: 60
 ID: 144 |  Item name: Screwdriver Set |  Item Price: 110.0 |  Item Quantity: 20
 ID: 145 |  Item name: Hammer |  Item Price: 100.0 |  Item Quantity: 15
@@ -49,3 +49,4 @@ ID: 147 |  Item name: Paint Brush |  Item Price: 50.0 |  Item Quantity: 40
 ID: 148 |  Item name: Umbrella |  Item Price: 180.0 |  Item Quantity: 30
 ID: 149 |  Item name: Slippers |  Item Price: 100.0 |  Item Quantity: 50
 ID: 150 |  Item name: T-shirt |  Item Price: 100.0 |  Item Quantity: 60
+ID: 151 |  Item name: Goojodoq Turbo fan |  Item Price: 725.25 |  Item Quantity: 25
