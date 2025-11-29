@@ -171,9 +171,8 @@ public class menuManager {
                 }
                 case 5 -> manageInventory.AddItems();
                 case 6 -> {
-                    manageInventory.DisplayItems();
                     try {
-
+                        manageInventory.DisplayItems();
                         System.out.println("Enter an item ID to be DELETED");
                         int id = sc.nextInt();
                         manageInventory.RemoveItems(id);
@@ -287,7 +286,6 @@ public class menuManager {
                 System.out.println("""
                         
                         ===================== STAFF MENU =====================
-                        
                         [1]. View Items
                         [2]. Edit items (to be approved by admin)
                         [3]. View pending request

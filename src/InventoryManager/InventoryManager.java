@@ -54,14 +54,14 @@ public class InventoryManager {
         }
         for (Items items : inventory.values()) {
             System.out.println(items);
+
         }
         System.out.println("=====================================================================");
         System.out.println("\nThe total Prices of all items were in stock are: " + formattedCurrency);
         System.out.println("\n");
 
-
-
     }
+
 
     public boolean isEmpty() {
         return inventory.isEmpty();
@@ -124,6 +124,7 @@ public class InventoryManager {
         return "";
     }
 
+
     public void SaveToFile() {
         String filePath = "NotepadDatabase\\" + FILE_NAME;
         File file = new File(filePath);
@@ -137,7 +138,7 @@ public class InventoryManager {
 
         try (BufferedWriter dataWriter = new BufferedWriter(new FileWriter(file))) {
             for (Items item : inventory.values()) {
-                dataWriter.write(item.toString());
+                dataWriter.write(item.toFileString());
                 dataWriter.newLine();
             }
         } catch (IOException e) {

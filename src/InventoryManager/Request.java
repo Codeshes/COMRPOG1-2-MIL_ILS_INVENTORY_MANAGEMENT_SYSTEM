@@ -1,12 +1,12 @@
 package InventoryManager;
 
 public class Request {
-    private static int counter = 100;
-    private final int requestId;
-    private final int itemId;
-    private final String itemName;
-    private final double proposedPrice;
-    private final String reason;
+    protected static int counter = 100;
+    protected final int requestId;
+    protected final int itemId;
+    protected final String itemName;
+    protected final double proposedPrice;
+    protected final String reason;
 
     public Request(int itemId, String itemName, double proposedPrice, String reason) {
         this.requestId = counter++;
