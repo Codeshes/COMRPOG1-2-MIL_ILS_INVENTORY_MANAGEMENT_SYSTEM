@@ -11,7 +11,7 @@ public class Items {
     protected int itemQuantity;
 
     private final LocalDate dateAdded;
-    private final LocalDate dateModified;
+    private LocalDate dateModified;
 
     private static final DateTimeFormatter DISPLAY_FORMAT = DateTimeFormatter.ofPattern("MMM dd, yyyy");
     public static final DateTimeFormatter FILE_FORMAT = DateTimeFormatter.ofPattern("MMM dd, yyyy");
@@ -40,11 +40,17 @@ public class Items {
 
 
     public int getItemId() { return itemId; }
+
     public String getItemName() { return itemName; }
+
     public double getItemPrice() { return itemPrice; }
+
     public int getItemQuantity() { return itemQuantity; }
+
     public String getFormattedDateAdded() { return dateAdded.format(DISPLAY_FORMAT); }
+
     public String getFormattedDateModified() { return dateModified.format(DISPLAY_FORMAT); }
+
     public String getDisplayDates() {
         String result = "Date Added: " + dateAdded.format(DISPLAY_FORMAT);
         if (!dateModified.equals(dateAdded)) {
@@ -52,7 +58,13 @@ public class Items {
         }
         return result;
     }
+
+    public void updateModifiedDate() {
+        this.dateModified = LocalDate.now();
+    }
+
     public void setItemPrice(double itemPrice) { this.itemPrice = itemPrice; }
+
 
 
 
@@ -71,7 +83,8 @@ public class Items {
                 "Item name:" + itemName + " | " +
                 "Item Price:" + itemPrice + " | " +
                 "Item Quantity:" + itemQuantity + " | " +
-                dateAdded.format(FILE_FORMAT) + " | " + dateModified.format(FILE_FORMAT);
+                "Date Added:" + dateAdded.format(FILE_FORMAT) + " | " +
+                "Date Modified:" + dateModified.format(FILE_FORMAT);
     }
 
 

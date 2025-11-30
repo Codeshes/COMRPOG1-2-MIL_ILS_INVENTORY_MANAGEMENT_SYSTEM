@@ -1,1 +1,1 @@
-ID:100 | Item name:Hello | Item Price:60.0 | Item Quantity:55 | Date Added:2025-11-29 | Date Modified:2025-11-29
+ID:100 | Item name:Hello | Item Price:25.0 | Item Quantity:55 | Date Added:Nov 29, 2025 | Date Modified:Nov 30, 2025

@@ -106,6 +106,7 @@ public class InventoryManager {
         if (inventory.containsKey(id)) {
             Items items = inventory.get(id);
             items.setItemPrice(newPrice);
+            items.updateModifiedDate();
             SaveToFile();
             System.out.println("Updated Successfully for ID: " + id);
         } else {
