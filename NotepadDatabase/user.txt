@@ -1,3 +1,2 @@
 ID: 200 | Username: HeadAdmin | Password: HeadAdminPass | Role: admin
 ID: 202 | Username: Staff1 | Password: Staff1 | Role: staff
-ID: 204 | Username: StaffGelo | Password: staff | Role: staff

@@ -99,8 +99,8 @@ public class Items {
         String name = p[1].replace("Item name:", "").trim();
         double price = Double.parseDouble(p[2].replace("Item Price:", "").trim());
         int qty = Integer.parseInt(p[3].replace("Item Quantity:", "").trim());
-        LocalDate dateAdded = LocalDate.parse(p[4].replace("Date Added:", "").trim());
-        LocalDate dateModified = LocalDate.parse(p[5].replace("Date Modified:", "").trim());
+        LocalDate dateAdded = LocalDate.parse(p[4].replace("Date Added:", "").trim(), FILE_FORMAT);
+        LocalDate dateModified = LocalDate.parse(p[5].replace("Date Modified:", "").trim(), FILE_FORMAT);
 
         return new Items(id, name, price, qty, dateAdded, dateModified);
     }

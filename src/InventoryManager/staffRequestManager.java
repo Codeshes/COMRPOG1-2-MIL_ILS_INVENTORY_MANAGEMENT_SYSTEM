@@ -69,8 +69,21 @@ public class staffRequestManager {
             System.out.println("Proposed Price: " + req.getProposedPrice());
             System.out.println("Reason: " + req.getReason());
 
-            System.out.print("Approve or Reject? (Accepted/Rejected): ");
-            String decision = sc.nextLine().trim();
+            String decision;
+            while (true) {
+                System.out.print("Approve or Reject? (Accepted/Rejected): ");
+                decision = sc.nextLine().trim();
+
+                if (decision.isEmpty()) {
+                    System.out.println("Field cannot be empty");
+                    continue;
+                }
+
+                if (decision.equalsIgnoreCase("Accepted") || decision.equalsIgnoreCase("Rejected")) {
+                    break;
+                }
+                System.out.println("Invalid input! Please type 'Accepted' or 'Rejected'");
+            }
 
             boolean approved = admin.reviewRequest(decision);
 
