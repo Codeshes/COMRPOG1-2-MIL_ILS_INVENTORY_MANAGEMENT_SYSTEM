@@ -1,1 +1,10 @@
-ID:100 | Item name:Hello | Item Price:60.0 | Item Quantity:55 | Date Added:2025-11-29 | Date Modified:2025-11-29
+ID:101 | Item name:Coffee Beans | Item Price:250.0 | Item Quantity:40 | Date Added:Dec 01, 2025 | Date Modified:Dec 06, 2025
+ID:102 | Item name:Milk Powder | Item Price:120.0 | Item Quantity:60 | Date Added:Dec 01, 2025 | Date Modified:Dec 01, 2025
+ID:103 | Item name:Soda Can | Item Price:35.0 | Item Quantity:150 | Date Added:Dec 01, 2025 | Date Modified:Dec 01, 2025
+ID:104 | Item name:Chocolate Bar | Item Price:25.0 | Item Quantity:200 | Date Added:Dec 01, 2025 | Date Modified:Dec 01, 2025
+ID:105 | Item name:Shampoo | Item Price:85.0 | Item Quantity:75 | Date Added:Dec 01, 2025 | Date Modified:Dec 01, 2025
+ID:106 | Item name:Bath Soap | Item Price:30.0 | Item Quantity:100 | Date Added:Dec 01, 2025 | Date Modified:Dec 01, 2025
+ID:107 | Item name:Bread Loaf | Item Price:55.0 | Item Quantity:35 | Date Added:Dec 01, 2025 | Date Modified:Dec 01, 2025
+ID:108 | Item name:Bottled Water | Item Price:20.0 | Item Quantity:300 | Date Added:Dec 01, 2025 | Date Modified:Dec 01, 2025
+ID:109 | Item name:Instant Noodles | Item Price:15.0 | Item Quantity:180 | Date Added:Dec 01, 2025 | Date Modified:Dec 01, 2025
+ID:110 | Item name:Laundry Detergent | Item Price:250.0 | Item Quantity:50 | Date Added:Dec 01, 2025 | Date Modified:Dec 06, 2025

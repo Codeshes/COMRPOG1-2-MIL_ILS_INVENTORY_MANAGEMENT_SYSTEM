@@ -7,5 +7,7 @@ public class Main {
 
 
         // will fix the DATE MODIFIED. When item is not modified it will not show. but if it is it will show
+        // GONNA ADD VALIDATION PER INPUT
+        // Will do it tonight
     }
 }
