@@ -259,9 +259,8 @@ public class menuManager {
                         }
                     }
                 }
-                case 9 -> {
-                        requestManager.viewRequest();
-                }
+                case 9 ->  requestManager.viewRequest();
+
 
                 case 10 -> {
                     Admin admin = new Admin();
@@ -433,12 +432,12 @@ public class menuManager {
                     }
 
                 }
-                case 3 -> {
+                case 3 ->
                     /*
                     This block of code is for view pending request
                      */
                     staffRequestManager.pendingRequest();
-                }
+
 
                 case 4 -> {
                     try {
